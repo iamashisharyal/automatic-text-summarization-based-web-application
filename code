@@ -1,0 +1,2224 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Chahedaoui-Bert.ipynb",
+      "provenance": [],
+      "collapsed_sections": [],
+      "authorship_tag": "ABX9TyMtymdfP/zE0T7YGLK7LgIz",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    },
+    "widgets": {
+      "application/vnd.jupyter.widget-state+json": {
+        "d620a7d6a3b24372afefdeea9a53f66d": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "HBoxModel",
+          "state": {
+            "_view_name": "HBoxView",
+            "_dom_classes": [],
+            "_model_name": "HBoxModel",
+            "_view_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "_view_count": null,
+            "_view_module_version": "1.5.0",
+            "box_style": "",
+            "layout": "IPY_MODEL_c014a9601d6040e8a53246686774e4d4",
+            "_model_module": "@jupyter-widgets/controls",
+            "children": [
+              "IPY_MODEL_ff80dc96bc0b48dc93030ee146454f1b",
+              "IPY_MODEL_9be7bc60320242449c87c4ab5decef9a"
+            ]
+          }
+        },
+        "c014a9601d6040e8a53246686774e4d4": {
+          "model_module": "@jupyter-widgets/base",
+          "model_name": "LayoutModel",
+          "state": {
+            "_view_name": "LayoutView",
+            "grid_template_rows": null,
+            "right": null,
+            "justify_content": null,
+            "_view_module": "@jupyter-widgets/base",
+            "overflow": null,
+            "_model_module_version": "1.2.0",
+            "_view_count": null,
+            "flex_flow": null,
+            "width": null,
+            "min_width": null,
+            "border": null,
+            "align_items": null,
+            "bottom": null,
+            "_model_module": "@jupyter-widgets/base",
+            "top": null,
+            "grid_column": null,
+            "overflow_y": null,
+            "overflow_x": null,
+            "grid_auto_flow": null,
+            "grid_area": null,
+            "grid_template_columns": null,
+            "flex": null,
+            "_model_name": "LayoutModel",
+            "justify_items": null,
+            "grid_row": null,
+            "max_height": null,
+            "align_content": null,
+            "visibility": null,
+            "align_self": null,
+            "height": null,
+            "min_height": null,
+            "padding": null,
+            "grid_auto_rows": null,
+            "grid_gap": null,
+            "max_width": null,
+            "order": null,
+            "_view_module_version": "1.2.0",
+            "grid_template_areas": null,
+            "object_position": null,
+            "object_fit": null,
+            "grid_auto_columns": null,
+            "margin": null,
+            "display": null,
+            "left": null
+          }
+        },
+        "ff80dc96bc0b48dc93030ee146454f1b": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "FloatProgressModel",
+          "state": {
+            "_view_name": "ProgressView",
+            "style": "IPY_MODEL_5fabe7a91dc84de0b5ce802b626454d2",
+            "_dom_classes": [],
+            "description": "Downloading: 100%",
+            "_model_name": "FloatProgressModel",
+            "bar_style": "success",
+            "max": 231508,
+            "_view_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "value": 231508,
+            "_view_count": null,
+            "_view_module_version": "1.5.0",
+            "orientation": "horizontal",
+            "min": 0,
+            "description_tooltip": null,
+            "_model_module": "@jupyter-widgets/controls",
+            "layout": "IPY_MODEL_b43d8c0238ac440a97db0684a10470c2"
+          }
+        },
+        "9be7bc60320242449c87c4ab5decef9a": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "HTMLModel",
+          "state": {
+            "_view_name": "HTMLView",
+            "style": "IPY_MODEL_f72d241b1c2f4c72892285588e69d278",
+            "_dom_classes": [],
+            "description": "",
+            "_model_name": "HTMLModel",
+            "placeholder": "​",
+            "_view_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "value": " 232k/232k [00:01&lt;00:00, 150kB/s]",
+            "_view_count": null,
+            "_view_module_version": "1.5.0",
+            "description_tooltip": null,
+            "_model_module": "@jupyter-widgets/controls",
+            "layout": "IPY_MODEL_b5a4e735bf4b4cc28080d6d794f21dde"
+          }
+        },
+        "5fabe7a91dc84de0b5ce802b626454d2": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "ProgressStyleModel",
+          "state": {
+            "_view_name": "StyleView",
+            "_model_name": "ProgressStyleModel",
+            "description_width": "initial",
+            "_view_module": "@jupyter-widgets/base",
+            "_model_module_version": "1.5.0",
+            "_view_count": null,
+            "_view_module_version": "1.2.0",
+            "bar_color": null,
+            "_model_module": "@jupyter-widgets/controls"
+          }
+        },
+        "b43d8c0238ac440a97db0684a10470c2": {
+          "model_module": "@jupyter-widgets/base",
+          "model_name": "LayoutModel",
+          "state": {
+            "_view_name": "LayoutView",
+            "grid_template_rows": null,
+            "right": null,
+            "justify_content": null,
+            "_view_module": "@jupyter-widgets/base",
+            "overflow": null,
+            "_model_module_version": "1.2.0",
+            "_view_count": null,
+            "flex_flow": null,
+            "width": null,
+            "min_width": null,
+            "border": null,
+            "align_items": null,
+            "bottom": null,
+            "_model_module": "@jupyter-widgets/base",
+            "top": null,
+            "grid_column": null,
+            "overflow_y": null,
+            "overflow_x": null,
+            "grid_auto_flow": null,
+            "grid_area": null,
+            "grid_template_columns": null,
+            "flex": null,
+            "_model_name": "LayoutModel",
+            "justify_items": null,
+            "grid_row": null,
+            "max_height": null,
+            "align_content": null,
+            "visibility": null,
+            "align_self": null,
+            "height": null,
+            "min_height": null,
+            "padding": null,
+            "grid_auto_rows": null,
+            "grid_gap": null,
+            "max_width": null,
+            "order": null,
+            "_view_module_version": "1.2.0",
+            "grid_template_areas": null,
+            "object_position": null,
+            "object_fit": null,
+            "grid_auto_columns": null,
+            "margin": null,
+            "display": null,
+            "left": null
+          }
+        },
+        "f72d241b1c2f4c72892285588e69d278": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "DescriptionStyleModel",
+          "state": {
+            "_view_name": "StyleView",
+            "_model_name": "DescriptionStyleModel",
+            "description_width": "",
+            "_view_module": "@jupyter-widgets/base",
+            "_model_module_version": "1.5.0",
+            "_view_count": null,
+            "_view_module_version": "1.2.0",
+            "_model_module": "@jupyter-widgets/controls"
+          }
+        },
+        "b5a4e735bf4b4cc28080d6d794f21dde": {
+          "model_module": "@jupyter-widgets/base",
+          "model_name": "LayoutModel",
+          "state": {
+            "_view_name": "LayoutView",
+            "grid_template_rows": null,
+            "right": null,
+            "justify_content": null,
+            "_view_module": "@jupyter-widgets/base",
+            "overflow": null,
+            "_model_module_version": "1.2.0",
+            "_view_count": null,
+            "flex_flow": null,
+            "width": null,
+            "min_width": null,
+            "border": null,
+            "align_items": null,
+            "bottom": null,
+            "_model_module": "@jupyter-widgets/base",
+            "top": null,
+            "grid_column": null,
+            "overflow_y": null,
+            "overflow_x": null,
+            "grid_auto_flow": null,
+            "grid_area": null,
+            "grid_template_columns": null,
+            "flex": null,
+            "_model_name": "LayoutModel",
+            "justify_items": null,
+            "grid_row": null,
+            "max_height": null,
+            "align_content": null,
+            "visibility": null,
+            "align_self": null,
+            "height": null,
+            "min_height": null,
+            "padding": null,
+            "grid_auto_rows": null,
+            "grid_gap": null,
+            "max_width": null,
+            "order": null,
+            "_view_module_version": "1.2.0",
+            "grid_template_areas": null,
+            "object_position": null,
+            "object_fit": null,
+            "grid_auto_columns": null,
+            "margin": null,
+            "display": null,
+            "left": null
+          }
+        },
+        "6a3408f80ec9460ab6e217b182c4c175": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "HBoxModel",
+          "state": {
+            "_view_name": "HBoxView",
+            "_dom_classes": [],
+            "_model_name": "HBoxModel",
+            "_view_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "_view_count": null,
+            "_view_module_version": "1.5.0",
+            "box_style": "",
+            "layout": "IPY_MODEL_f707706e2cd14ca595953626e0afe636",
+            "_model_module": "@jupyter-widgets/controls",
+            "children": [
+              "IPY_MODEL_bb57adfcd6f6479fb930d6a96f5a0e9f",
+              "IPY_MODEL_153a69010d2f4adf9cfe61db39946159"
+            ]
+          }
+        },
+        "f707706e2cd14ca595953626e0afe636": {
+          "model_module": "@jupyter-widgets/base",
+          "model_name": "LayoutModel",
+          "state": {
+            "_view_name": "LayoutView",
+            "grid_template_rows": null,
+            "right": null,
+            "justify_content": null,
+            "_view_module": "@jupyter-widgets/base",
+            "overflow": null,
+            "_model_module_version": "1.2.0",
+            "_view_count": null,
+            "flex_flow": null,
+            "width": null,
+            "min_width": null,
+            "border": null,
+            "align_items": null,
+            "bottom": null,
+            "_model_module": "@jupyter-widgets/base",
+            "top": null,
+            "grid_column": null,
+            "overflow_y": null,
+            "overflow_x": null,
+            "grid_auto_flow": null,
+            "grid_area": null,
+            "grid_template_columns": null,
+            "flex": null,
+            "_model_name": "LayoutModel",
+            "justify_items": null,
+            "grid_row": null,
+            "max_height": null,
+            "align_content": null,
+            "visibility": null,
+            "align_self": null,
+            "height": null,
+            "min_height": null,
+            "padding": null,
+            "grid_auto_rows": null,
+            "grid_gap": null,
+            "max_width": null,
+            "order": null,
+            "_view_module_version": "1.2.0",
+            "grid_template_areas": null,
+            "object_position": null,
+            "object_fit": null,
+            "grid_auto_columns": null,
+            "margin": null,
+            "display": null,
+            "left": null
+          }
+        },
+        "bb57adfcd6f6479fb930d6a96f5a0e9f": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "FloatProgressModel",
+          "state": {
+            "_view_name": "ProgressView",
+            "style": "IPY_MODEL_471c1b82d235450889fcc67e9929b717",
+            "_dom_classes": [],
+            "description": "Downloading: 100%",
+            "_model_name": "FloatProgressModel",
+            "bar_style": "success",
+            "max": 28,
+            "_view_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "value": 28,
+            "_view_count": null,
+            "_view_module_version": "1.5.0",
+            "orientation": "horizontal",
+            "min": 0,
+            "description_tooltip": null,
+            "_model_module": "@jupyter-widgets/controls",
+            "layout": "IPY_MODEL_0043fceef6684ec7b70126503021a63d"
+          }
+        },
+        "153a69010d2f4adf9cfe61db39946159": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "HTMLModel",
+          "state": {
+            "_view_name": "HTMLView",
+            "style": "IPY_MODEL_b5188f26da6b49cbb1ef21271b87c1e0",
+            "_dom_classes": [],
+            "description": "",
+            "_model_name": "HTMLModel",
+            "placeholder": "​",
+            "_view_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "value": " 28.0/28.0 [00:00&lt;00:00, 106B/s]",
+            "_view_count": null,
+            "_view_module_version": "1.5.0",
+            "description_tooltip": null,
+            "_model_module": "@jupyter-widgets/controls",
+            "layout": "IPY_MODEL_6419e747c0f54fe4a8277b2673f8b870"
+          }
+        },
+        "471c1b82d235450889fcc67e9929b717": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "ProgressStyleModel",
+          "state": {
+            "_view_name": "StyleView",
+            "_model_name": "ProgressStyleModel",
+            "description_width": "initial",
+            "_view_module": "@jupyter-widgets/base",
+            "_model_module_version": "1.5.0",
+            "_view_count": null,
+            "_view_module_version": "1.2.0",
+            "bar_color": null,
+            "_model_module": "@jupyter-widgets/controls"
+          }
+        },
+        "0043fceef6684ec7b70126503021a63d": {
+          "model_module": "@jupyter-widgets/base",
+          "model_name": "LayoutModel",
+          "state": {
+            "_view_name": "LayoutView",
+            "grid_template_rows": null,
+            "right": null,
+            "justify_content": null,
+            "_view_module": "@jupyter-widgets/base",
+            "overflow": null,
+            "_model_module_version": "1.2.0",
+            "_view_count": null,
+            "flex_flow": null,
+            "width": null,
+            "min_width": null,
+            "border": null,
+            "align_items": null,
+            "bottom": null,
+            "_model_module": "@jupyter-widgets/base",
+            "top": null,
+            "grid_column": null,
+            "overflow_y": null,
+            "overflow_x": null,
+            "grid_auto_flow": null,
+            "grid_area": null,
+            "grid_template_columns": null,
+            "flex": null,
+            "_model_name": "LayoutModel",
+            "justify_items": null,
+            "grid_row": null,
+            "max_height": null,
+            "align_content": null,
+            "visibility": null,
+            "align_self": null,
+            "height": null,
+            "min_height": null,
+            "padding": null,
+            "grid_auto_rows": null,
+            "grid_gap": null,
+            "max_width": null,
+            "order": null,
+            "_view_module_version": "1.2.0",
+            "grid_template_areas": null,
+            "object_position": null,
+            "object_fit": null,
+            "grid_auto_columns": null,
+            "margin": null,
+            "display": null,
+            "left": null
+          }
+        },
+        "b5188f26da6b49cbb1ef21271b87c1e0": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "DescriptionStyleModel",
+          "state": {
+            "_view_name": "StyleView",
+            "_model_name": "DescriptionStyleModel",
+            "description_width": "",
+            "_view_module": "@jupyter-widgets/base",
+            "_model_module_version": "1.5.0",
+            "_view_count": null,
+            "_view_module_version": "1.2.0",
+            "_model_module": "@jupyter-widgets/controls"
+          }
+        },
+        "6419e747c0f54fe4a8277b2673f8b870": {
+          "model_module": "@jupyter-widgets/base",
+          "model_name": "LayoutModel",
+          "state": {
+            "_view_name": "LayoutView",
+            "grid_template_rows": null,
+            "right": null,
+            "justify_content": null,
+            "_view_module": "@jupyter-widgets/base",
+            "overflow": null,
+            "_model_module_version": "1.2.0",
+            "_view_count": null,
+            "flex_flow": null,
+            "width": null,
+            "min_width": null,
+            "border": null,
+            "align_items": null,
+            "bottom": null,
+            "_model_module": "@jupyter-widgets/base",
+            "top": null,
+            "grid_column": null,
+            "overflow_y": null,
+            "overflow_x": null,
+            "grid_auto_flow": null,
+            "grid_area": null,
+            "grid_template_columns": null,
+            "flex": null,
+            "_model_name": "LayoutModel",
+            "justify_items": null,
+            "grid_row": null,
+            "max_height": null,
+            "align_content": null,
+            "visibility": null,
+            "align_self": null,
+            "height": null,
+            "min_height": null,
+            "padding": null,
+            "grid_auto_rows": null,
+            "grid_gap": null,
+            "max_width": null,
+            "order": null,
+            "_view_module_version": "1.2.0",
+            "grid_template_areas": null,
+            "object_position": null,
+            "object_fit": null,
+            "grid_auto_columns": null,
+            "margin": null,
+            "display": null,
+            "left": null
+          }
+        },
+        "1326b813994d4144844840bd65ee1ca6": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "HBoxModel",
+          "state": {
+            "_view_name": "HBoxView",
+            "_dom_classes": [],
+            "_model_name": "HBoxModel",
+            "_view_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "_view_count": null,
+            "_view_module_version": "1.5.0",
+            "box_style": "",
+            "layout": "IPY_MODEL_8f140cce226f42b98cdff42a6d1cf1b3",
+            "_model_module": "@jupyter-widgets/controls",
+            "children": [
+              "IPY_MODEL_a12dfa7bb8d4415ebc8b7894f254aafc",
+              "IPY_MODEL_e519e333c9c746e1a9876f7ab7d811fc"
+            ]
+          }
+        },
+        "8f140cce226f42b98cdff42a6d1cf1b3": {
+          "model_module": "@jupyter-widgets/base",
+          "model_name": "LayoutModel",
+          "state": {
+            "_view_name": "LayoutView",
+            "grid_template_rows": null,
+            "right": null,
+            "justify_content": null,
+            "_view_module": "@jupyter-widgets/base",
+            "overflow": null,
+            "_model_module_version": "1.2.0",
+            "_view_count": null,
+            "flex_flow": null,
+            "width": null,
+            "min_width": null,
+            "border": null,
+            "align_items": null,
+            "bottom": null,
+            "_model_module": "@jupyter-widgets/base",
+            "top": null,
+            "grid_column": null,
+            "overflow_y": null,
+            "overflow_x": null,
+            "grid_auto_flow": null,
+            "grid_area": null,
+            "grid_template_columns": null,
+            "flex": null,
+            "_model_name": "LayoutModel",
+            "justify_items": null,
+            "grid_row": null,
+            "max_height": null,
+            "align_content": null,
+            "visibility": null,
+            "align_self": null,
+            "height": null,
+            "min_height": null,
+            "padding": null,
+            "grid_auto_rows": null,
+            "grid_gap": null,
+            "max_width": null,
+            "order": null,
+            "_view_module_version": "1.2.0",
+            "grid_template_areas": null,
+            "object_position": null,
+            "object_fit": null,
+            "grid_auto_columns": null,
+            "margin": null,
+            "display": null,
+            "left": null
+          }
+        },
+        "a12dfa7bb8d4415ebc8b7894f254aafc": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "FloatProgressModel",
+          "state": {
+            "_view_name": "ProgressView",
+            "style": "IPY_MODEL_54517180d43c470aa189748e81f37591",
+            "_dom_classes": [],
+            "description": "Downloading: 100%",
+            "_model_name": "FloatProgressModel",
+            "bar_style": "success",
+            "max": 466062,
+            "_view_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "value": 466062,
+            "_view_count": null,
+            "_view_module_version": "1.5.0",
+            "orientation": "horizontal",
+            "min": 0,
+            "description_tooltip": null,
+            "_model_module": "@jupyter-widgets/controls",
+            "layout": "IPY_MODEL_697ff04c4aa24950b95e560935572d3a"
+          }
+        },
+        "e519e333c9c746e1a9876f7ab7d811fc": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "HTMLModel",
+          "state": {
+            "_view_name": "HTMLView",
+            "style": "IPY_MODEL_202913f2c6f84693b2ea072a629e4e61",
+            "_dom_classes": [],
+            "description": "",
+            "_model_name": "HTMLModel",
+            "placeholder": "​",
+            "_view_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "value": " 466k/466k [00:00&lt;00:00, 2.07MB/s]",
+            "_view_count": null,
+            "_view_module_version": "1.5.0",
+            "description_tooltip": null,
+            "_model_module": "@jupyter-widgets/controls",
+            "layout": "IPY_MODEL_fc8d2bd5e5a041d2974607c4b28f6cbc"
+          }
+        },
+        "54517180d43c470aa189748e81f37591": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "ProgressStyleModel",
+          "state": {
+            "_view_name": "StyleView",
+            "_model_name": "ProgressStyleModel",
+            "description_width": "initial",
+            "_view_module": "@jupyter-widgets/base",
+            "_model_module_version": "1.5.0",
+            "_view_count": null,
+            "_view_module_version": "1.2.0",
+            "bar_color": null,
+            "_model_module": "@jupyter-widgets/controls"
+          }
+        },
+        "697ff04c4aa24950b95e560935572d3a": {
+          "model_module": "@jupyter-widgets/base",
+          "model_name": "LayoutModel",
+          "state": {
+            "_view_name": "LayoutView",
+            "grid_template_rows": null,
+            "right": null,
+            "justify_content": null,
+            "_view_module": "@jupyter-widgets/base",
+            "overflow": null,
+            "_model_module_version": "1.2.0",
+            "_view_count": null,
+            "flex_flow": null,
+            "width": null,
+            "min_width": null,
+            "border": null,
+            "align_items": null,
+            "bottom": null,
+            "_model_module": "@jupyter-widgets/base",
+            "top": null,
+            "grid_column": null,
+            "overflow_y": null,
+            "overflow_x": null,
+            "grid_auto_flow": null,
+            "grid_area": null,
+            "grid_template_columns": null,
+            "flex": null,
+            "_model_name": "LayoutModel",
+            "justify_items": null,
+            "grid_row": null,
+            "max_height": null,
+            "align_content": null,
+            "visibility": null,
+            "align_self": null,
+            "height": null,
+            "min_height": null,
+            "padding": null,
+            "grid_auto_rows": null,
+            "grid_gap": null,
+            "max_width": null,
+            "order": null,
+            "_view_module_version": "1.2.0",
+            "grid_template_areas": null,
+            "object_position": null,
+            "object_fit": null,
+            "grid_auto_columns": null,
+            "margin": null,
+            "display": null,
+            "left": null
+          }
+        },
+        "202913f2c6f84693b2ea072a629e4e61": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "DescriptionStyleModel",
+          "state": {
+            "_view_name": "StyleView",
+            "_model_name": "DescriptionStyleModel",
+            "description_width": "",
+            "_view_module": "@jupyter-widgets/base",
+            "_model_module_version": "1.5.0",
+            "_view_count": null,
+            "_view_module_version": "1.2.0",
+            "_model_module": "@jupyter-widgets/controls"
+          }
+        },
+        "fc8d2bd5e5a041d2974607c4b28f6cbc": {
+          "model_module": "@jupyter-widgets/base",
+          "model_name": "LayoutModel",
+          "state": {
+            "_view_name": "LayoutView",
+            "grid_template_rows": null,
+            "right": null,
+            "justify_content": null,
+            "_view_module": "@jupyter-widgets/base",
+            "overflow": null,
+            "_model_module_version": "1.2.0",
+            "_view_count": null,
+            "flex_flow": null,
+            "width": null,
+            "min_width": null,
+            "border": null,
+            "align_items": null,
+            "bottom": null,
+            "_model_module": "@jupyter-widgets/base",
+            "top": null,
+            "grid_column": null,
+            "overflow_y": null,
+            "overflow_x": null,
+            "grid_auto_flow": null,
+            "grid_area": null,
+            "grid_template_columns": null,
+            "flex": null,
+            "_model_name": "LayoutModel",
+            "justify_items": null,
+            "grid_row": null,
+            "max_height": null,
+            "align_content": null,
+            "visibility": null,
+            "align_self": null,
+            "height": null,
+            "min_height": null,
+            "padding": null,
+            "grid_auto_rows": null,
+            "grid_gap": null,
+            "max_width": null,
+            "order": null,
+            "_view_module_version": "1.2.0",
+            "grid_template_areas": null,
+            "object_position": null,
+            "object_fit": null,
+            "grid_auto_columns": null,
+            "margin": null,
+            "display": null,
+            "left": null
+          }
+        },
+        "aa4e93bcb6ad4c1b82359b0a798b424e": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "HBoxModel",
+          "state": {
+            "_view_name": "HBoxView",
+            "_dom_classes": [],
+            "_model_name": "HBoxModel",
+            "_view_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "_view_count": null,
+            "_view_module_version": "1.5.0",
+            "box_style": "",
+            "layout": "IPY_MODEL_b0efd14383604d86a6481dd87f100fc6",
+            "_model_module": "@jupyter-widgets/controls",
+            "children": [
+              "IPY_MODEL_7fb62c4f435049b9b555d393c592d891",
+              "IPY_MODEL_d9134f425c7940dea3e19f4232302d8a"
+            ]
+          }
+        },
+        "b0efd14383604d86a6481dd87f100fc6": {
+          "model_module": "@jupyter-widgets/base",
+          "model_name": "LayoutModel",
+          "state": {
+            "_view_name": "LayoutView",
+            "grid_template_rows": null,
+            "right": null,
+            "justify_content": null,
+            "_view_module": "@jupyter-widgets/base",
+            "overflow": null,
+            "_model_module_version": "1.2.0",
+            "_view_count": null,
+            "flex_flow": null,
+            "width": null,
+            "min_width": null,
+            "border": null,
+            "align_items": null,
+            "bottom": null,
+            "_model_module": "@jupyter-widgets/base",
+            "top": null,
+            "grid_column": null,
+            "overflow_y": null,
+            "overflow_x": null,
+            "grid_auto_flow": null,
+            "grid_area": null,
+            "grid_template_columns": null,
+            "flex": null,
+            "_model_name": "LayoutModel",
+            "justify_items": null,
+            "grid_row": null,
+            "max_height": null,
+            "align_content": null,
+            "visibility": null,
+            "align_self": null,
+            "height": null,
+            "min_height": null,
+            "padding": null,
+            "grid_auto_rows": null,
+            "grid_gap": null,
+            "max_width": null,
+            "order": null,
+            "_view_module_version": "1.2.0",
+            "grid_template_areas": null,
+            "object_position": null,
+            "object_fit": null,
+            "grid_auto_columns": null,
+            "margin": null,
+            "display": null,
+            "left": null
+          }
+        },
+        "7fb62c4f435049b9b555d393c592d891": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "FloatProgressModel",
+          "state": {
+            "_view_name": "ProgressView",
+            "style": "IPY_MODEL_3adf726b1ac34898bbfb8ac5733f3ad6",
+            "_dom_classes": [],
+            "description": "Downloading: 100%",
+            "_model_name": "FloatProgressModel",
+            "bar_style": "success",
+            "max": 442,
+            "_view_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "value": 442,
+            "_view_count": null,
+            "_view_module_version": "1.5.0",
+            "orientation": "horizontal",
+            "min": 0,
+            "description_tooltip": null,
+            "_model_module": "@jupyter-widgets/controls",
+            "layout": "IPY_MODEL_5617eac9b95f489b93f2e6bcea705817"
+          }
+        },
+        "d9134f425c7940dea3e19f4232302d8a": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "HTMLModel",
+          "state": {
+            "_view_name": "HTMLView",
+            "style": "IPY_MODEL_068529465c664683b2916b7f69e40c47",
+            "_dom_classes": [],
+            "description": "",
+            "_model_name": "HTMLModel",
+            "placeholder": "​",
+            "_view_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "value": " 442/442 [00:00&lt;00:00, 769B/s]",
+            "_view_count": null,
+            "_view_module_version": "1.5.0",
+            "description_tooltip": null,
+            "_model_module": "@jupyter-widgets/controls",
+            "layout": "IPY_MODEL_344467de24f64d098b759d03eafdf7c6"
+          }
+        },
+        "3adf726b1ac34898bbfb8ac5733f3ad6": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "ProgressStyleModel",
+          "state": {
+            "_view_name": "StyleView",
+            "_model_name": "ProgressStyleModel",
+            "description_width": "initial",
+            "_view_module": "@jupyter-widgets/base",
+            "_model_module_version": "1.5.0",
+            "_view_count": null,
+            "_view_module_version": "1.2.0",
+            "bar_color": null,
+            "_model_module": "@jupyter-widgets/controls"
+          }
+        },
+        "5617eac9b95f489b93f2e6bcea705817": {
+          "model_module": "@jupyter-widgets/base",
+          "model_name": "LayoutModel",
+          "state": {
+            "_view_name": "LayoutView",
+            "grid_template_rows": null,
+            "right": null,
+            "justify_content": null,
+            "_view_module": "@jupyter-widgets/base",
+            "overflow": null,
+            "_model_module_version": "1.2.0",
+            "_view_count": null,
+            "flex_flow": null,
+            "width": null,
+            "min_width": null,
+            "border": null,
+            "align_items": null,
+            "bottom": null,
+            "_model_module": "@jupyter-widgets/base",
+            "top": null,
+            "grid_column": null,
+            "overflow_y": null,
+            "overflow_x": null,
+            "grid_auto_flow": null,
+            "grid_area": null,
+            "grid_template_columns": null,
+            "flex": null,
+            "_model_name": "LayoutModel",
+            "justify_items": null,
+            "grid_row": null,
+            "max_height": null,
+            "align_content": null,
+            "visibility": null,
+            "align_self": null,
+            "height": null,
+            "min_height": null,
+            "padding": null,
+            "grid_auto_rows": null,
+            "grid_gap": null,
+            "max_width": null,
+            "order": null,
+            "_view_module_version": "1.2.0",
+            "grid_template_areas": null,
+            "object_position": null,
+            "object_fit": null,
+            "grid_auto_columns": null,
+            "margin": null,
+            "display": null,
+            "left": null
+          }
+        },
+        "068529465c664683b2916b7f69e40c47": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "DescriptionStyleModel",
+          "state": {
+            "_view_name": "StyleView",
+            "_model_name": "DescriptionStyleModel",
+            "description_width": "",
+            "_view_module": "@jupyter-widgets/base",
+            "_model_module_version": "1.5.0",
+            "_view_count": null,
+            "_view_module_version": "1.2.0",
+            "_model_module": "@jupyter-widgets/controls"
+          }
+        },
+        "344467de24f64d098b759d03eafdf7c6": {
+          "model_module": "@jupyter-widgets/base",
+          "model_name": "LayoutModel",
+          "state": {
+            "_view_name": "LayoutView",
+            "grid_template_rows": null,
+            "right": null,
+            "justify_content": null,
+            "_view_module": "@jupyter-widgets/base",
+            "overflow": null,
+            "_model_module_version": "1.2.0",
+            "_view_count": null,
+            "flex_flow": null,
+            "width": null,
+            "min_width": null,
+            "border": null,
+            "align_items": null,
+            "bottom": null,
+            "_model_module": "@jupyter-widgets/base",
+            "top": null,
+            "grid_column": null,
+            "overflow_y": null,
+            "overflow_x": null,
+            "grid_auto_flow": null,
+            "grid_area": null,
+            "grid_template_columns": null,
+            "flex": null,
+            "_model_name": "LayoutModel",
+            "justify_items": null,
+            "grid_row": null,
+            "max_height": null,
+            "align_content": null,
+            "visibility": null,
+            "align_self": null,
+            "height": null,
+            "min_height": null,
+            "padding": null,
+            "grid_auto_rows": null,
+            "grid_gap": null,
+            "max_width": null,
+            "order": null,
+            "_view_module_version": "1.2.0",
+            "grid_template_areas": null,
+            "object_position": null,
+            "object_fit": null,
+            "grid_auto_columns": null,
+            "margin": null,
+            "display": null,
+            "left": null
+          }
+        },
+        "311b78a44fcc45b1bea4f36b98904e90": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "HBoxModel",
+          "state": {
+            "_view_name": "HBoxView",
+            "_dom_classes": [],
+            "_model_name": "HBoxModel",
+            "_view_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "_view_count": null,
+            "_view_module_version": "1.5.0",
+            "box_style": "",
+            "layout": "IPY_MODEL_ae63939df33e42dca788597d4a5e3e75",
+            "_model_module": "@jupyter-widgets/controls",
+            "children": [
+              "IPY_MODEL_7fa6b61071b8423b9e48e350bea9897a",
+              "IPY_MODEL_31e25603c8ca4989a3cd2d6d2ce9b896"
+            ]
+          }
+        },
+        "ae63939df33e42dca788597d4a5e3e75": {
+          "model_module": "@jupyter-widgets/base",
+          "model_name": "LayoutModel",
+          "state": {
+            "_view_name": "LayoutView",
+            "grid_template_rows": null,
+            "right": null,
+            "justify_content": null,
+            "_view_module": "@jupyter-widgets/base",
+            "overflow": null,
+            "_model_module_version": "1.2.0",
+            "_view_count": null,
+            "flex_flow": null,
+            "width": null,
+            "min_width": null,
+            "border": null,
+            "align_items": null,
+            "bottom": null,
+            "_model_module": "@jupyter-widgets/base",
+            "top": null,
+            "grid_column": null,
+            "overflow_y": null,
+            "overflow_x": null,
+            "grid_auto_flow": null,
+            "grid_area": null,
+            "grid_template_columns": null,
+            "flex": null,
+            "_model_name": "LayoutModel",
+            "justify_items": null,
+            "grid_row": null,
+            "max_height": null,
+            "align_content": null,
+            "visibility": null,
+            "align_self": null,
+            "height": null,
+            "min_height": null,
+            "padding": null,
+            "grid_auto_rows": null,
+            "grid_gap": null,
+            "max_width": null,
+            "order": null,
+            "_view_module_version": "1.2.0",
+            "grid_template_areas": null,
+            "object_position": null,
+            "object_fit": null,
+            "grid_auto_columns": null,
+            "margin": null,
+            "display": null,
+            "left": null
+          }
+        },
+        "7fa6b61071b8423b9e48e350bea9897a": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "FloatProgressModel",
+          "state": {
+            "_view_name": "ProgressView",
+            "style": "IPY_MODEL_ddde6fed69924211be86449b673fc046",
+            "_dom_classes": [],
+            "description": "Downloading: 100%",
+            "_model_name": "FloatProgressModel",
+            "bar_style": "success",
+            "max": 267967963,
+            "_view_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "value": 267967963,
+            "_view_count": null,
+            "_view_module_version": "1.5.0",
+            "orientation": "horizontal",
+            "min": 0,
+            "description_tooltip": null,
+            "_model_module": "@jupyter-widgets/controls",
+            "layout": "IPY_MODEL_8425a28b30a4409192a169f9cc8a4059"
+          }
+        },
+        "31e25603c8ca4989a3cd2d6d2ce9b896": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "HTMLModel",
+          "state": {
+            "_view_name": "HTMLView",
+            "style": "IPY_MODEL_48b0327faf0745e7bbac62c94bc5569d",
+            "_dom_classes": [],
+            "description": "",
+            "_model_name": "HTMLModel",
+            "placeholder": "​",
+            "_view_module": "@jupyter-widgets/controls",
+            "_model_module_version": "1.5.0",
+            "value": " 268M/268M [00:07&lt;00:00, 37.6MB/s]",
+            "_view_count": null,
+            "_view_module_version": "1.5.0",
+            "description_tooltip": null,
+            "_model_module": "@jupyter-widgets/controls",
+            "layout": "IPY_MODEL_a1190d2830614fee8d934260f24b8c25"
+          }
+        },
+        "ddde6fed69924211be86449b673fc046": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "ProgressStyleModel",
+          "state": {
+            "_view_name": "StyleView",
+            "_model_name": "ProgressStyleModel",
+            "description_width": "initial",
+            "_view_module": "@jupyter-widgets/base",
+            "_model_module_version": "1.5.0",
+            "_view_count": null,
+            "_view_module_version": "1.2.0",
+            "bar_color": null,
+            "_model_module": "@jupyter-widgets/controls"
+          }
+        },
+        "8425a28b30a4409192a169f9cc8a4059": {
+          "model_module": "@jupyter-widgets/base",
+          "model_name": "LayoutModel",
+          "state": {
+            "_view_name": "LayoutView",
+            "grid_template_rows": null,
+            "right": null,
+            "justify_content": null,
+            "_view_module": "@jupyter-widgets/base",
+            "overflow": null,
+            "_model_module_version": "1.2.0",
+            "_view_count": null,
+            "flex_flow": null,
+            "width": null,
+            "min_width": null,
+            "border": null,
+            "align_items": null,
+            "bottom": null,
+            "_model_module": "@jupyter-widgets/base",
+            "top": null,
+            "grid_column": null,
+            "overflow_y": null,
+            "overflow_x": null,
+            "grid_auto_flow": null,
+            "grid_area": null,
+            "grid_template_columns": null,
+            "flex": null,
+            "_model_name": "LayoutModel",
+            "justify_items": null,
+            "grid_row": null,
+            "max_height": null,
+            "align_content": null,
+            "visibility": null,
+            "align_self": null,
+            "height": null,
+            "min_height": null,
+            "padding": null,
+            "grid_auto_rows": null,
+            "grid_gap": null,
+            "max_width": null,
+            "order": null,
+            "_view_module_version": "1.2.0",
+            "grid_template_areas": null,
+            "object_position": null,
+            "object_fit": null,
+            "grid_auto_columns": null,
+            "margin": null,
+            "display": null,
+            "left": null
+          }
+        },
+        "48b0327faf0745e7bbac62c94bc5569d": {
+          "model_module": "@jupyter-widgets/controls",
+          "model_name": "DescriptionStyleModel",
+          "state": {
+            "_view_name": "StyleView",
+            "_model_name": "DescriptionStyleModel",
+            "description_width": "",
+            "_view_module": "@jupyter-widgets/base",
+            "_model_module_version": "1.5.0",
+            "_view_count": null,
+            "_view_module_version": "1.2.0",
+            "_model_module": "@jupyter-widgets/controls"
+          }
+        },
+        "a1190d2830614fee8d934260f24b8c25": {
+          "model_module": "@jupyter-widgets/base",
+          "model_name": "LayoutModel",
+          "state": {
+            "_view_name": "LayoutView",
+            "grid_template_rows": null,
+            "right": null,
+            "justify_content": null,
+            "_view_module": "@jupyter-widgets/base",
+            "overflow": null,
+            "_model_module_version": "1.2.0",
+            "_view_count": null,
+            "flex_flow": null,
+            "width": null,
+            "min_width": null,
+            "border": null,
+            "align_items": null,
+            "bottom": null,
+            "_model_module": "@jupyter-widgets/base",
+            "top": null,
+            "grid_column": null,
+            "overflow_y": null,
+            "overflow_x": null,
+            "grid_auto_flow": null,
+            "grid_area": null,
+            "grid_template_columns": null,
+            "flex": null,
+            "_model_name": "LayoutModel",
+            "justify_items": null,
+            "grid_row": null,
+            "max_height": null,
+            "align_content": null,
+            "visibility": null,
+            "align_self": null,
+            "height": null,
+            "min_height": null,
+            "padding": null,
+            "grid_auto_rows": null,
+            "grid_gap": null,
+            "max_width": null,
+            "order": null,
+            "_view_module_version": "1.2.0",
+            "grid_template_areas": null,
+            "object_position": null,
+            "object_fit": null,
+            "grid_auto_columns": null,
+            "margin": null,
+            "display": null,
+            "left": null
+          }
+        }
+      }
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/amin98506/ATS-Bert/blob/main/English%20Automatic%20Text%20Summarization%20with%20Bert%20Method.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "fUEjBPFQ3jfL"
+      },
+      "source": [
+        "**README**\n",
+        "\n",
+        "here is a text in the beginning of the notebook (two random texts combined: https://neilb.org/2021/04/27/perl-communities.html and https://www.nationalgeographic.com/science/article/rare-chunks-of-earths-mantle-found-exposed-in-maryland). After you run all the cells you will find a plot in the very end of the notebook. Hover any point, and you will find the sentence, that generated this point."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-90uCl8VhSpk",
+        "outputId": "d8c16f81-5e6a-4c16-8be5-f66e5973b15d"
+      },
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "import torch\n",
+        "\n",
+        "!pip install transformers\n",
+        "\n",
+        "import transformers as ppb # pytorch transformers"
+      ],
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Collecting transformers\n",
+            "\u001b[?25l  Downloading https://files.pythonhosted.org/packages/d5/43/cfe4ee779bbd6a678ac6a97c5a5cdeb03c35f9eaebbb9720b036680f9a2d/transformers-4.6.1-py3-none-any.whl (2.2MB)\n",
+            "\u001b[K     |████████████████████████████████| 2.3MB 8.4MB/s \n",
+            "\u001b[?25hCollecting sacremoses\n",
+            "\u001b[?25l  Downloading https://files.pythonhosted.org/packages/75/ee/67241dc87f266093c533a2d4d3d69438e57d7a90abb216fa076e7d475d4a/sacremoses-0.0.45-py3-none-any.whl (895kB)\n",
+            "\u001b[K     |████████████████████████████████| 901kB 38.3MB/s \n",
+            "\u001b[?25hCollecting huggingface-hub==0.0.8\n",
+            "  Downloading https://files.pythonhosted.org/packages/a1/88/7b1e45720ecf59c6c6737ff332f41c955963090a18e72acbcbeac6b25e86/huggingface_hub-0.0.8-py3-none-any.whl\n",
+            "Collecting tokenizers<0.11,>=0.10.1\n",
+            "\u001b[?25l  Downloading https://files.pythonhosted.org/packages/d4/e2/df3543e8ffdab68f5acc73f613de9c2b155ac47f162e725dcac87c521c11/tokenizers-0.10.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (3.3MB)\n",
+            "\u001b[K     |████████████████████████████████| 3.3MB 39.2MB/s \n",
+            "\u001b[?25hRequirement already satisfied: requests in /usr/local/lib/python3.7/dist-packages (from transformers) (2.23.0)\n",
+            "Requirement already satisfied: tqdm>=4.27 in /usr/local/lib/python3.7/dist-packages (from transformers) (4.41.1)\n",
+            "Requirement already satisfied: importlib-metadata; python_version < \"3.8\" in /usr/local/lib/python3.7/dist-packages (from transformers) (4.0.1)\n",
+            "Requirement already satisfied: filelock in /usr/local/lib/python3.7/dist-packages (from transformers) (3.0.12)\n",
+            "Requirement already satisfied: packaging in /usr/local/lib/python3.7/dist-packages (from transformers) (20.9)\n",
+            "Requirement already satisfied: numpy>=1.17 in /usr/local/lib/python3.7/dist-packages (from transformers) (1.19.5)\n",
+            "Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.7/dist-packages (from transformers) (2019.12.20)\n",
+            "Requirement already satisfied: six in /usr/local/lib/python3.7/dist-packages (from sacremoses->transformers) (1.15.0)\n",
+            "Requirement already satisfied: joblib in /usr/local/lib/python3.7/dist-packages (from sacremoses->transformers) (1.0.1)\n",
+            "Requirement already satisfied: click in /usr/local/lib/python3.7/dist-packages (from sacremoses->transformers) (7.1.2)\n",
+            "Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /usr/local/lib/python3.7/dist-packages (from requests->transformers) (1.24.3)\n",
+            "Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.7/dist-packages (from requests->transformers) (2020.12.5)\n",
+            "Requirement already satisfied: idna<3,>=2.5 in /usr/local/lib/python3.7/dist-packages (from requests->transformers) (2.10)\n",
+            "Requirement already satisfied: chardet<4,>=3.0.2 in /usr/local/lib/python3.7/dist-packages (from requests->transformers) (3.0.4)\n",
+            "Requirement already satisfied: zipp>=0.5 in /usr/local/lib/python3.7/dist-packages (from importlib-metadata; python_version < \"3.8\"->transformers) (3.4.1)\n",
+            "Requirement already satisfied: typing-extensions>=3.6.4; python_version < \"3.8\" in /usr/local/lib/python3.7/dist-packages (from importlib-metadata; python_version < \"3.8\"->transformers) (3.7.4.3)\n",
+            "Requirement already satisfied: pyparsing>=2.0.2 in /usr/local/lib/python3.7/dist-packages (from packaging->transformers) (2.4.7)\n",
+            "Installing collected packages: sacremoses, huggingface-hub, tokenizers, transformers\n",
+            "Successfully installed huggingface-hub-0.0.8 sacremoses-0.0.45 tokenizers-0.10.3 transformers-4.6.1\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 171
+        },
+        "id": "tsZCX2KCh9sD",
+        "outputId": "624e38f5-6c2c-41c6-f9cd-05e0d9f3b8b9"
+      },
+      "source": [
+        "text = \"\"\"We often talk about \"The Perl Community\", but I don't think it exists. Instead what we have is a loose, and at times fraught, federation of communities. Over the last few weeks I've been thinking and talking about this a lot, so I wanted to share some of those thoughts, and hear what others think. This is not me trying to tell you how things are, but how I see things, and also to outline some things that I think might help us be less fraught.\n",
+        "\n",
+        "A community is two or more people who come together, typically because they have something in common. This may be a belief, a common purpose or goal, an activity, pastime, or a shared characteristic. A group of people with something in common, that they might use as a label for themselves, or a shared identity.\n",
+        "\n",
+        "This can happen organically. Let's say you get into knitting, and you bump into someone who's not only another knitter, but feels like a kindred spirit. You start hanging out at the pub, knitting together. Other people notice and ask if they can join in. This is great: you feel part of something, and it's boosting something that already gave you pleasure (knitting). Slowly you accrete more members, and it becomes a key part of your life. You're emotionally invested. Then someone joins your circle, but they're a bit different. They start telling everybody what they're doing wrong, scoffing at crochet, and getting right in your needles. \"Hey, we'll all be better knitters if we're honest with each other – I'm trying to help you, and you should push me too!\". Some people look to you to \"do something!\", but others like the new member, finding them a breath of fresh air. Suddenly your happy place has become a cause of stress. There's no malice intended, but unless dealt with, the tension will build up, lead to conflict, and worse.\n",
+        "\n",
+        "When we join a community that feels like a good fit, it's easy to assume that we all share the same values, but that's almost never the case. It's also tempting to think that because you're \"with your tribe\", that you should like everyone, and everyone should like you. But for a community of any size, that just won't be true, and hoping for it can only lead to disappointment.\n",
+        "\n",
+        "Similarly we're not going to agree with everyone else's ideas and opinions. We need to run our communities in a way that lets us work through our differences and reach consensus. Most of the time that won't mean unanimity, but that the right people had an opportunity for input, and an appropriate process was followed to produce a decision that people can live with. While doing that, we have to be mindful of Popper's Paradox: to maintain tolerant communities, we must be intolerant of intolerance.\n",
+        "\n",
+        "One Perl community is \"The Toolchain\". These are the people who work on PAUSE, MetaCPAN, and other parts of the CPAN ecosystem that we all rely on. Over the years there have been a number of areas of tension, resulting in charged emails and stressful discussions. Working through two of these ultimately resulted in the River of CPAN model and PAUSE Operating Model. Having shared mental models has made it easier — and less fraught — to talk about what we're doing together. Conflict can sometimes be an indicator that you're missing a shared model.\n",
+        "\n",
+        "We need a shared model for our communities: what are they, how do they fit together, how do they work individually, and what happens when they overlap. I suspect that individual communities will find that they would benefit from their own internal models as well, as Toolchain has.\n",
+        "\n",
+        "We've all heard about situations where our communities seem to be dysfunctional. In many of those cases, I don't believe there was malicious intent, but a mismatch in one or more of expectations, values, principles, priorities, mental models, and more. And while we've gradually been introducing codes of conduct, and other standards, over the last 25 or 30 years we've essentially accumulated community debt.\n",
+        "\n",
+        "In addition to shared models, our communities need standards of behaviour, which have to include processes for dealing with someone who violates those standards. That may be as simple as \"if you're a jerk, we'll kick you off\", but larger communities need a range of tools at their disposal, including a quiet chat, warnings, time-limited bans, and then ultimately a lifetime ban (\"permaban\"). There are situations where a permaban is an appropriate first response (sexual assault or physical violence, for example), but in most cases, a permaban should be the tool of last resort, used only when all other avenues have been exhausted. Sometimes people just aren't for your community, but there should be a respectful and transparent process for getting to that decision, that doesn't feel arbitrary and capricious.\n",
+        "\n",
+        "Communities of any size are going to be heterogeneous, and that's a good thing, but presents challenges. People need to find their place, and healthy communities work out how to play to their members' strengths. Being more explicit about the nature of each of our communities, and how they work, could help this, I think.\n",
+        "\n",
+        "We need the people who quietly beaver away, building things that we all rely on, whether that's Perl itself, the toolchain, CPAN modules, or tools like ack. We need the people who write documentation, publish books, and weekly newsletters. We need the people who organise events and meetups, and who bring us together in myriad other ways, including those who provide and run infrastructure that our online communities rely on. We also need organisations like TPF, Les Mongeurs de Perl, and the EPO, to handle things like trademarks, provide bank accounts, channel sponsorship, and many other behind-the-scenes activities required for a large family of communities.\n",
+        "\n",
+        "When these people and communities come together (at conferences, on mailing lists, IRC, Twitter, Facebook, meetups, etc), differences in values, behaviours, and norms, come into play. This is one of the reasons why these places benefit from an explicit code of conduct. Many conference organisers don't think of it as \"their conference\", but as something that they do \"for the community\". In that context, organisers can feel uneasy about specifying the rules, but ultimately it will make life better for all of us if they do. Saying \"this conference has no code of conduct\" is a code of conduct, and lets people make decisions about whether they're happy to attend.\n",
+        "\n",
+        "Our IRC channels and perl.org mailing lists are similar but different. Lists and channels are individual communities, and can create their own culture, but have to do so within the constraints of the operators rules (e.g. the irc.perl.org house rules).\n",
+        "\n",
+        "One example list, perl5-porters or \"p5p\", has a clear governance structure, with a Steering Council (PSC). The council's job is to build a shared vision, not to impose one. We've seen this over the last year when trying to create a definition for Perl 7. A perennial tension in p5p, and elsewhere, is to find the balance point along the spectrum from \"change nothing\", through \"aim for backwards compatibility\", and \"forward motion\", ending somewhere near \"move fast and break things\". Imposing a vision top-down didn't work; once we started talking to lots of people, and listening, the \"right answer\" seemed to crystallise out. Sure, some people knew that right answer \"all along\", but as a community we had to work through to get to that point together.\n",
+        "Conclusion\n",
+        "\n",
+        "I don't think we should talk about \"The Perl Community\", but rather \"The Perl Communities\". They're complex, messy, and diverse (in many ways, nowhere near enough). We've built up significant community debt over the last 30+ years. We have a lot of pieces in place, but I think we need a shared model for talking about these communities, so we can decide how we want them to work, and what to do when they collide, or overlap. I think we need to build that together.\n",
+        "\n",
+        "One thing that would help us is a map, so that we all have the same picture of our communities, and how they fit together. What house rules do we have already, and who gets to define them? Creating this sort of map will probably produce a lot of \"oh, I didn't know that” moments. I suspect the best way to come up with the map is for various people to have a go, and then we patch them together until we have something that feels right.\n",
+        "\n",
+        "At the same time, we can talk about communities and how they work, sharing stories and resources, and looking at what other communities beyond Perl have done. There are many wheels here that we do not need to reinvent. Hopefully these things will prompt individual communities to start defining their cultures, and where appropriate, governance structures. In a grassroots community of volunteers, like ours, I think that culture has to \"bubble up\": not be imposed in a top-down fashion, and leadership should be seen in terms of service to your community.\n",
+        "\n",
+        "We'll then start thinking about the boundaries between communities, and the meta communities where we come together, and how best to define them. I hope the process will naturally bubble up, as we factor out common pieces.\n",
+        "\n",
+        "We may also find that in working this stuff out, we may find communities that don't want to be labelled \"a Perl community\". They could still appear on our map, but labelled \"here be dragons\".\n",
+        "\"\"\"\n",
+        "\"\"\" text =\n",
+        "Standing among patches of muddy snow on the outskirts of Baltimore, Maryland, I bent down to pick up a piece of the planet that should have been hidden miles below my feet.\n",
+        "\n",
+        "On that chilly February day, I was out with a pair of geologists to see an exposed section of Earth's mantle. While this layer of rock is usually found between the planet's crust and core, a segment peeks out of the scrubby Maryland forest, offering scientists a rare chance to study Earth's innards up close.\n",
+        "\n",
+        "Even more intriguing, the rock's unusual chemical makeup suggests that this piece of mantle, along with chunks of lower crust scattered around Baltimore, was once part of the seafloor of a now-vanished ocean.\n",
+        "\n",
+        "Over the roughly 490 million years since their formation, these hunks of Earth were smashed by shifting tectonic plates and broiled by searing hot fluids rushing through cracks, altering both their composition and sheen. Mantle rock is generally full of sparkly green crystals of the mineral olivine, but the rock in my hand was surprisingly unremarkable to look at: mottled yellow-brown stone occasionally flecked with black.\n",
+        "\n",
+        "“Those rocks have had a tough life,” says George Guice, a mineralogist at the Smithsonian’s National Museum of Natural History.\n",
+        "\n",
+        "Because of this geologic clobbering, scientists have struggled for more than a century to determine the precise origins of this series of rocks. Now, Guice and his colleagues have applied a fresh eye and state-of-the-art chemical analyses to the set of rocky exposures in Baltimore. Their work shows that the seemingly bland series of stones once lurked underneath the ancient Iapetus Ocean. \n",
+        "\n",
+        "More than half a billion years ago, this ocean spanned some 3,000 to 5,000 miles, cutting through what is now the United States’ eastern seaboard. Much of the land where the Appalachian mountains now stand was on one side of the ocean, and parts of the modern East Coast were on the other.\n",
+        "\n",
+        "“It's a huge ocean between them, and we’ve got a little bit of that ocean smooshed in Baltimore,” says Guice, lead author of a recent study describing the find in the journal Geosphere.\n",
+        "\n",
+        "Throughout our planet’s history, oceans have proven to be impermanent features, opening and closing through the ages as their seafloors are recycled back into the depths of the planet in subduction zones, where one tectonic plate plunges beneath another. But occasionally chunks of the ocean floor, like the series of rocks in Baltimore, are tossed up onto the surface. These rocks provide a rare window into ancient oceanic processes, and they could help scientists better understand the future of the Atlantic Ocean. Someday it, too, will likely close.\n",
+        "\n",
+        "“It will happen to the Atlantic as it did to the Iapetus,” says study co-author Daniel Viete, a geologist who specializes in tectonic processes at Johns Hopkins University in Baltimore. “It’s this long-term dance of the continental fragments, which remain at the Earth’s surface.”\n",
+        "The lure of green sparkle\n",
+        "\n",
+        "Guice has long chased after sparkly green rocks, known to geologists as ultramafic. They’re rich in magnesium and make up the majority of our planet as the mantle. But pieces of the mantle are rare at the surface, and ultramafic rocks can form in several different ways, including in large crystallizing magma chambers. They’re also devilishly difficult to study.\n",
+        "\n",
+        "Ultramafic rocks form deep underground at high temperatures and pressures, so their minerals are not stable near Earth's surface. In this shallow environment, they're often exposed to hot fluids rushing through cracks, transforming their mineral makeup, as seen in the rocks strewn around Baltimore. Understanding the rock’s history through these changes, Guice says, is like looking through thick fog.\n",
+        "\n",
+        "“I’m so exhausted by these guys,” he says with a mix of dejection and humor.\n",
+        "Guice holds a piece of the mantle, pointing to a tiny black crystal of spinel—the rock’s only mineral that’s survived millions of years largely intact. The chemistry of these crystals holds crucial clues that point to the rock’s original formation underneath an ancient seafloor.\n",
+        "Photograph by Maya Wei-Haas, National Geographic\n",
+        "\n",
+        "When he heard of the curious ultramafic rocks in Baltimore, he was eager to learn more. Soon after he moved to Washington, D.C. in August 2019, he hopped on a train to meet up with Viete and other Johns Hopkins researchers. They all piled in a minibus to head out to a site known as Soldiers Delight.\n",
+        "\n",
+        "Guice took me to this very spot. As I followed his rented silver SUV out to the site, away from Baltimore’s dense city center, I watched the landscape undergo a remarkable change. The greenery shifted from a variety of leafy trees and plants to barren grassy fields rimed with stunted oak and pine. The difference in vegetation reflected a change in the underlying geology, evincing rocks with excess magnesium and too little calcium for most plants to thrive. We had driven onto the mantle.\n",
+        "\n",
+        "Many have suggested before that these seemingly unremarkable stones once resided under an ancient seafloor, yet convincingly demonstrating that has eluded generations of scientists. Slices of the ocean crust and underlying mantle thrust onto land are known as ophiolites. They've been found in other places around the world, such as a sequence in Oman, where you can walk from the mantle up through the crust.\n",
+        "\n",
+        "Other ophiolites have also been identified in the northern reaches of the Appalachian mountain range, which stretches far beyond U.S. borders into Canada, and then reappears in Ireland, the United Kingdom, and even Norway—the same original mountain range, now known by different names. All these now-disparate terrains piled up between 300 and 500 million years ago as multiple continents crashed together in what would become the supercontinent of Pangaea. Today, these mountainous landscapes extend more than 3,100 miles, but the original mountain belt may have been even longer, Viete says.\n",
+        "\n",
+        "Unlike other known ophiolites, however, the series of rocks in Baltimore are dismembered and jumbled, with a sprawling metropolis plunked down on top of them. “We can’t see the sequence, we’ve just got little snippets,” Guice says. \n",
+        "A half-billion year journey\n",
+        "\n",
+        "Starting with their initial trip out to Soldiers Delight, Guice and his colleagues collected a string of rock samples throughout Baltimore. They arranged to work with a team that was excavating a yawning basin in the region slated to become a water reservoir, which they later discovered once sat at the boundary between the mantle and crust. Excavators pulled chunks of the grey rocks from the ground, making the scientists' job much easier.\n",
+        "\n",
+        "“It’s everywhere, there are just piles of it,” Viete said, gesturing to the rocky mounds as we walked around the parking lot of the site about a year later.\n",
+        "\n",
+        "The researchers also spent a sunny afternoon in November 2019 sampling rocks in the Forest Park Golf Course, which also once sat at the boundary between the mantle and crust. The rocks seemed artfully arranged among the wild grasses next to the manicured green of the ninth hole. The team hammered away at the exposure, pausing out of courtesy whenever a group of golfers passed through to putt. \n",
+        "\n",
+        "In total, the team collected 19 samples of ultramafic rock from five locations and then returned to the lab for a closer look. The key, Guice says, is in the chemistry of the mantle. The upper mantle is frequently melted a little bit at a time, but different minerals melt at different temperatures. So when the mantle partially melts, it becomes increasingly devoid of a predictable series of elements, which creates a specific chemical fingerprint.\n",
+        "\n",
+        "“That is the thing that had not been identified in this part of the Appalachians before,” Guice says.\n",
+        "\n",
+        "By sussing out these and other chemical clues, the scientists arrived at a story of the system’s formation. Nearly half a billion years ago, the Iapetus Ocean began to shrink thanks to a newborn subduction zone off the coast of the ancient continent Laurentia, which contained the core of modern North America. This created a continental pile-up that warped the surface and raised the mighty Appalachians, which some scientists estimate once rivaled the Himalaya. \n",
+        "\n",
+        "The violent shifts, according to the new research, also ripped up a chunk of the seafloor, strewing its dismembered bits across what is now Baltimore—one of the few places where you can still see evidence of an ocean now long gone.\n",
+        "The stony stories that surround us\n",
+        "\n",
+        "While the origin story of the curious Baltimore rocks has long been suspected, the new study provides the best data yet to support the tale.\n",
+        "\n",
+        "“We’ve been visiting some of these locations for decades for our petrology field trips,” says Richard Walker, a geochemist at the University of Maryland who was not part of the study team. “It was really nice to see a paper come out to provide some geochemical evidence for what we’ve been assuming all along.” \n",
+        "\n",
+        "Not every piece of this geological puzzle slots into place perfectly. But in a system that has been tectonically heated and squashed as much as the Baltimore rocks, oddballs are expected, says Val Finlayson, a geochemist at the University of Maryland who wasn't involved in the study. “More often, things on this planet are much more complicated than what we would like them to be,” she says, adding how impressed she was with the vast amount of information the team pulled from the highly altered rocks.\n",
+        "\n",
+        "For Guice, the work is an important proving ground for the identification of even older and more tortured seafloor chunks that have been thrust onto land. Such sequences are a hallmark of plate tectonics, so by identifying older ophiolites, he says, we might find clues to when this vital geologic process began.\n",
+        "\n",
+        "The work also fits into a larger question about subduction, Viete says. Exactly how subduction zones form is an enduring mystery. One possibility is that many of these zones don't precisely start but rather propagate from one region to another. It’s a bit like tearing a piece of fabric. When whole, the material is tough to tear, but add a snip to one side, and the sheet will readily split.\n",
+        "\n",
+        "The presence of ophiolites has previously been tied to subduction zones in their infancy, so by precisely dating the string of ophiolites along the Appalachians, Viete hopes to get a sense of how quickly a geologic nick might propagate, turning one subduction zone into thousands of miles of tectonic activity. Such an event would light up a string of volcanoes akin to the ring of fire that rims the modern Pacific Ocean.\n",
+        "\n",
+        "Beyond these scientific pursuits, the tale serves as a reminder of the geologic underpinnings of modern society. The rocks left a legacy that shaped Baltimore as we know it. Rich in the mineral chromite, these seafloor chunks put dollar signs in the eyes of Isaac Tyson, Jr. in the early 1800s. He began buying up lands chock-full of the yellow-brown rocks, establishing his first chrome plant in 1845 and putting Maryland on the map as the chrome capital of the world during that time. While the find was a financial boon, it also produced a carcinogenic form of chromium that the city still grapples with today.\n",
+        "\n",
+        "Long before humans walked the Earth, a tectonic dance laid the foundation for modern industries and the spread of people around the world. While cities have paved over much of this past, obscuring the ground underneath parking lots and roadways, these ancient tales are still etched into stone—if you know where to look.\n",
+        "\n",
+        "“They’re in the buildings, and they’re under your feet,” Viete says. “Rocks are all around you.”\n",
+        "\"\"\""
+      ],
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            },
+            "text/plain": [
+              "\" text =\\nStanding among patches of muddy snow on the outskirts of Baltimore, Maryland, I bent down to pick up a piece of the planet that should have been hidden miles below my feet.\\n\\nOn that chilly February day, I was out with a pair of geologists to see an exposed section of Earth's mantle. While this layer of rock is usually found between the planet's crust and core, a segment peeks out of the scrubby Maryland forest, offering scientists a rare chance to study Earth's innards up close.\\n\\nEven more intriguing, the rock's unusual chemical makeup suggests that this piece of mantle, along with chunks of lower crust scattered around Baltimore, was once part of the seafloor of a now-vanished ocean.\\n\\nOver the roughly 490 million years since their formation, these hunks of Earth were smashed by shifting tectonic plates and broiled by searing hot fluids rushing through cracks, altering both their composition and sheen. Mantle rock is generally full of sparkly green crystals of the mineral olivine, but the rock in my hand was surprisingly unremarkable to look at: mottled yellow-brown stone occasionally flecked with black.\\n\\n“Those rocks have had a tough life,” says George Guice, a mineralogist at the Smithsonian’s National Museum of Natural History.\\n\\nBecause of this geologic clobbering, scientists have struggled for more than a century to determine the precise origins of this series of rocks. Now, Guice and his colleagues have applied a fresh eye and state-of-the-art chemical analyses to the set of rocky exposures in Baltimore. Their work shows that the seemingly bland series of stones once lurked underneath the ancient Iapetus Ocean. \\n\\nMore than half a billion years ago, this ocean spanned some 3,000 to 5,000 miles, cutting through what is now the United States’ eastern seaboard. Much of the land where the Appalachian mountains now stand was on one side of the ocean, and parts of the modern East Coast were on the other.\\n\\n“It's a huge ocean between them, and we’ve got a little bit of that ocean smooshed in Baltimore,” says Guice, lead author of a recent study describing the find in the journal Geosphere.\\n\\nThroughout our planet’s history, oceans have proven to be impermanent features, opening and closing through the ages as their seafloors are recycled back into the depths of the planet in subduction zones, where one tectonic plate plunges beneath another. But occasionally chunks of the ocean floor, like the series of rocks in Baltimore, are tossed up onto the surface. These rocks provide a rare window into ancient oceanic processes, and they could help scientists better understand the future of the Atlantic Ocean. Someday it, too, will likely close.\\n\\n“It will happen to the Atlantic as it did to the Iapetus,” says study co-author Daniel Viete, a geologist who specializes in tectonic processes at Johns Hopkins University in Baltimore. “It’s this long-term dance of the continental fragments, which remain at the Earth’s surface.”\\nThe lure of green sparkle\\n\\nGuice has long chased after sparkly green rocks, known to geologists as ultramafic. They’re rich in magnesium and make up the majority of our planet as the mantle. But pieces of the mantle are rare at the surface, and ultramafic rocks can form in several different ways, including in large crystallizing magma chambers. They’re also devilishly difficult to study.\\n\\nUltramafic rocks form deep underground at high temperatures and pressures, so their minerals are not stable near Earth's surface. In this shallow environment, they're often exposed to hot fluids rushing through cracks, transforming their mineral makeup, as seen in the rocks strewn around Baltimore. Understanding the rock’s history through these changes, Guice says, is like looking through thick fog.\\n\\n“I’m so exhausted by these guys,” he says with a mix of dejection and humor.\\nGuice holds a piece of the mantle, pointing to a tiny black crystal of spinel—the rock’s only mineral that’s survived millions of years largely intact. The chemistry of these crystals holds crucial clues that point to the rock’s original formation underneath an ancient seafloor.\\nPhotograph by Maya Wei-Haas, National Geographic\\n\\nWhen he heard of the curious ultramafic rocks in Baltimore, he was eager to learn more. Soon after he moved to Washington, D.C. in August 2019, he hopped on a train to meet up with Viete and other Johns Hopkins researchers. They all piled in a minibus to head out to a site known as Soldiers Delight.\\n\\nGuice took me to this very spot. As I followed his rented silver SUV out to the site, away from Baltimore’s dense city center, I watched the landscape undergo a remarkable change. The greenery shifted from a variety of leafy trees and plants to barren grassy fields rimed with stunted oak and pine. The difference in vegetation reflected a change in the underlying geology, evincing rocks with excess magnesium and too little calcium for most plants to thrive. We had driven onto the mantle.\\n\\nMany have suggested before that these seemingly unremarkable stones once resided under an ancient seafloor, yet convincingly demonstrating that has eluded generations of scientists. Slices of the ocean crust and underlying mantle thrust onto land are known as ophiolites. They've been found in other places around the world, such as a sequence in Oman, where you can walk from the mantle up through the crust.\\n\\nOther ophiolites have also been identified in the northern reaches of the Appalachian mountain range, which stretches far beyond U.S. borders into Canada, and then reappears in Ireland, the United Kingdom, and even Norway—the same original mountain range, now known by different names. All these now-disparate terrains piled up between 300 and 500 million years ago as multiple continents crashed together in what would become the supercontinent of Pangaea. Today, these mountainous landscapes extend more than 3,100 miles, but the original mountain belt may have been even longer, Viete says.\\n\\nUnlike other known ophiolites, however, the series of rocks in Baltimore are dismembered and jumbled, with a sprawling metropolis plunked down on top of them. “We can’t see the sequence, we’ve just got little snippets,” Guice says. \\nA half-billion year journey\\n\\nStarting with their initial trip out to Soldiers Delight, Guice and his colleagues collected a string of rock samples throughout Baltimore. They arranged to work with a team that was excavating a yawning basin in the region slated to become a water reservoir, which they later discovered once sat at the boundary between the mantle and crust. Excavators pulled chunks of the grey rocks from the ground, making the scientists' job much easier.\\n\\n“It’s everywhere, there are just piles of it,” Viete said, gesturing to the rocky mounds as we walked around the parking lot of the site about a year later.\\n\\nThe researchers also spent a sunny afternoon in November 2019 sampling rocks in the Forest Park Golf Course, which also once sat at the boundary between the mantle and crust. The rocks seemed artfully arranged among the wild grasses next to the manicured green of the ninth hole. The team hammered away at the exposure, pausing out of courtesy whenever a group of golfers passed through to putt. \\n\\nIn total, the team collected 19 samples of ultramafic rock from five locations and then returned to the lab for a closer look. The key, Guice says, is in the chemistry of the mantle. The upper mantle is frequently melted a little bit at a time, but different minerals melt at different temperatures. So when the mantle partially melts, it becomes increasingly devoid of a predictable series of elements, which creates a specific chemical fingerprint.\\n\\n“That is the thing that had not been identified in this part of the Appalachians before,” Guice says.\\n\\nBy sussing out these and other chemical clues, the scientists arrived at a story of the system’s formation. Nearly half a billion years ago, the Iapetus Ocean began to shrink thanks to a newborn subduction zone off the coast of the ancient continent Laurentia, which contained the core of modern North America. This created a continental pile-up that warped the surface and raised the mighty Appalachians, which some scientists estimate once rivaled the Himalaya. \\n\\nThe violent shifts, according to the new research, also ripped up a chunk of the seafloor, strewing its dismembered bits across what is now Baltimore—one of the few places where you can still see evidence of an ocean now long gone.\\nThe stony stories that surround us\\n\\nWhile the origin story of the curious Baltimore rocks has long been suspected, the new study provides the best data yet to support the tale.\\n\\n“We’ve been visiting some of these locations for decades for our petrology field trips,” says Richard Walker, a geochemist at the University of Maryland who was not part of the study team. “It was really nice to see a paper come out to provide some geochemical evidence for what we’ve been assuming all along.” \\n\\nNot every piece of this geological puzzle slots into place perfectly. But in a system that has been tectonically heated and squashed as much as the Baltimore rocks, oddballs are expected, says Val Finlayson, a geochemist at the University of Maryland who wasn't involved in the study. “More often, things on this planet are much more complicated than what we would like them to be,” she says, adding how impressed she was with the vast amount of information the team pulled from the highly altered rocks.\\n\\nFor Guice, the work is an important proving ground for the identification of even older and more tortured seafloor chunks that have been thrust onto land. Such sequences are a hallmark of plate tectonics, so by identifying older ophiolites, he says, we might find clues to when this vital geologic process began.\\n\\nThe work also fits into a larger question about subduction, Viete says. Exactly how subduction zones form is an enduring mystery. One possibility is that many of these zones don't precisely start but rather propagate from one region to another. It’s a bit like tearing a piece of fabric. When whole, the material is tough to tear, but add a snip to one side, and the sheet will readily split.\\n\\nThe presence of ophiolites has previously been tied to subduction zones in their infancy, so by precisely dating the string of ophiolites along the Appalachians, Viete hopes to get a sense of how quickly a geologic nick might propagate, turning one subduction zone into thousands of miles of tectonic activity. Such an event would light up a string of volcanoes akin to the ring of fire that rims the modern Pacific Ocean.\\n\\nBeyond these scientific pursuits, the tale serves as a reminder of the geologic underpinnings of modern society. The rocks left a legacy that shaped Baltimore as we know it. Rich in the mineral chromite, these seafloor chunks put dollar signs in the eyes of Isaac Tyson, Jr. in the early 1800s. He began buying up lands chock-full of the yellow-brown rocks, establishing his first chrome plant in 1845 and putting Maryland on the map as the chrome capital of the world during that time. While the find was a financial boon, it also produced a carcinogenic form of chromium that the city still grapples with today.\\n\\nLong before humans walked the Earth, a tectonic dance laid the foundation for modern industries and the spread of people around the world. While cities have paved over much of this past, obscuring the ground underneath parking lots and roadways, these ancient tales are still etched into stone—if you know where to look.\\n\\n“They’re in the buildings, and they’re under your feet,” Viete says. “Rocks are all around you.”\\n\""
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 3
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "do3OCr2AknIE",
+        "outputId": "702c2430-78aa-45bd-cfe5-ceba2c518e85"
+      },
+      "source": [
+        "import nltk.tokenize\n",
+        "nltk.download('punkt')\n",
+        "all_sentences = nltk.tokenize.sent_tokenize(text)"
+      ],
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[nltk_data] Downloading package punkt to /root/nltk_data...\n",
+            "[nltk_data]   Package punkt is already up-to-date!\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "fUuIX31HlEdL",
+        "outputId": "eeff1030-5313-4f2e-9433-8a93fc927783"
+      },
+      "source": [
+        "print(f\"Now we got a text with {len(all_sentences)} sentences\")"
+      ],
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Now we got a text with 81 sentences\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "SjWvWnNhlOSJ"
+      },
+      "source": [
+        "model_class, tokenizer_class, pretrained_weights = (ppb.DistilBertModel, ppb.DistilBertTokenizer, 'distilbert-base-uncased')"
+      ],
+      "execution_count": 7,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 333,
+          "referenced_widgets": [
+            "d620a7d6a3b24372afefdeea9a53f66d",
+            "c014a9601d6040e8a53246686774e4d4",
+            "ff80dc96bc0b48dc93030ee146454f1b",
+            "9be7bc60320242449c87c4ab5decef9a",
+            "5fabe7a91dc84de0b5ce802b626454d2",
+            "b43d8c0238ac440a97db0684a10470c2",
+            "f72d241b1c2f4c72892285588e69d278",
+            "b5a4e735bf4b4cc28080d6d794f21dde",
+            "6a3408f80ec9460ab6e217b182c4c175",
+            "f707706e2cd14ca595953626e0afe636",
+            "bb57adfcd6f6479fb930d6a96f5a0e9f",
+            "153a69010d2f4adf9cfe61db39946159",
+            "471c1b82d235450889fcc67e9929b717",
+            "0043fceef6684ec7b70126503021a63d",
+            "b5188f26da6b49cbb1ef21271b87c1e0",
+            "6419e747c0f54fe4a8277b2673f8b870",
+            "1326b813994d4144844840bd65ee1ca6",
+            "8f140cce226f42b98cdff42a6d1cf1b3",
+            "a12dfa7bb8d4415ebc8b7894f254aafc",
+            "e519e333c9c746e1a9876f7ab7d811fc",
+            "54517180d43c470aa189748e81f37591",
+            "697ff04c4aa24950b95e560935572d3a",
+            "202913f2c6f84693b2ea072a629e4e61",
+            "fc8d2bd5e5a041d2974607c4b28f6cbc",
+            "aa4e93bcb6ad4c1b82359b0a798b424e",
+            "b0efd14383604d86a6481dd87f100fc6",
+            "7fb62c4f435049b9b555d393c592d891",
+            "d9134f425c7940dea3e19f4232302d8a",
+            "3adf726b1ac34898bbfb8ac5733f3ad6",
+            "5617eac9b95f489b93f2e6bcea705817",
+            "068529465c664683b2916b7f69e40c47",
+            "344467de24f64d098b759d03eafdf7c6",
+            "311b78a44fcc45b1bea4f36b98904e90",
+            "ae63939df33e42dca788597d4a5e3e75",
+            "7fa6b61071b8423b9e48e350bea9897a",
+            "31e25603c8ca4989a3cd2d6d2ce9b896",
+            "ddde6fed69924211be86449b673fc046",
+            "8425a28b30a4409192a169f9cc8a4059",
+            "48b0327faf0745e7bbac62c94bc5569d",
+            "a1190d2830614fee8d934260f24b8c25"
+          ]
+        },
+        "id": "WykKHoxalWSZ",
+        "outputId": "e28abcb0-dabb-4b4c-f6aa-e5aca2dbe8ac"
+      },
+      "source": [
+        "tokenizer = tokenizer_class.from_pretrained(pretrained_weights)\n",
+        "model = model_class.from_pretrained(pretrained_weights)"
+      ],
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "application/vnd.jupyter.widget-view+json": {
+              "model_id": "d620a7d6a3b24372afefdeea9a53f66d",
+              "version_minor": 0,
+              "version_major": 2
+            },
+            "text/plain": [
+              "HBox(children=(FloatProgress(value=0.0, description='Downloading', max=231508.0, style=ProgressStyle(descripti…"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        },
+        {
+          "output_type": "stream",
+          "text": [
+            "\n"
+          ],
+          "name": "stdout"
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "application/vnd.jupyter.widget-view+json": {
+              "model_id": "6a3408f80ec9460ab6e217b182c4c175",
+              "version_minor": 0,
+              "version_major": 2
+            },
+            "text/plain": [
+              "HBox(children=(FloatProgress(value=0.0, description='Downloading', max=28.0, style=ProgressStyle(description_w…"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        },
+        {
+          "output_type": "stream",
+          "text": [
+            "\n"
+          ],
+          "name": "stdout"
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "application/vnd.jupyter.widget-view+json": {
+              "model_id": "1326b813994d4144844840bd65ee1ca6",
+              "version_minor": 0,
+              "version_major": 2
+            },
+            "text/plain": [
+              "HBox(children=(FloatProgress(value=0.0, description='Downloading', max=466062.0, style=ProgressStyle(descripti…"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        },
+        {
+          "output_type": "stream",
+          "text": [
+            "\n"
+          ],
+          "name": "stdout"
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "application/vnd.jupyter.widget-view+json": {
+              "model_id": "aa4e93bcb6ad4c1b82359b0a798b424e",
+              "version_minor": 0,
+              "version_major": 2
+            },
+            "text/plain": [
+              "HBox(children=(FloatProgress(value=0.0, description='Downloading', max=442.0, style=ProgressStyle(description_…"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        },
+        {
+          "output_type": "stream",
+          "text": [
+            "\n"
+          ],
+          "name": "stdout"
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "application/vnd.jupyter.widget-view+json": {
+              "model_id": "311b78a44fcc45b1bea4f36b98904e90",
+              "version_minor": 0,
+              "version_major": 2
+            },
+            "text/plain": [
+              "HBox(children=(FloatProgress(value=0.0, description='Downloading', max=267967963.0, style=ProgressStyle(descri…"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        },
+        {
+          "output_type": "stream",
+          "text": [
+            "\n"
+          ],
+          "name": "stdout"
+        },
+        {
+          "output_type": "stream",
+          "text": [
+            "Some weights of the model checkpoint at distilbert-base-uncased were not used when initializing DistilBertModel: ['vocab_layer_norm.bias', 'vocab_projector.weight', 'vocab_projector.bias', 'vocab_layer_norm.weight', 'vocab_transform.bias', 'vocab_transform.weight']\n",
+            "- This IS expected if you are initializing DistilBertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).\n",
+            "- This IS NOT expected if you are initializing DistilBertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).\n"
+          ],
+          "name": "stderr"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "6GVsvki1ls7K"
+      },
+      "source": [
+        "# sentences = [\"I like ice-cream.\", \"I love ice-cream.\", \"I like cookies.\", \"Dinosaurs are big\"]"
+      ],
+      "execution_count": 9,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "bAgIDIeolx-C"
+      },
+      "source": [
+        "sentences = all_sentences[:500]"
+      ],
+      "execution_count": 10,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "fQrTX20cl32z"
+      },
+      "source": [
+        "input_ids = tokenizer(sentences, add_special_tokens=True, return_tensors=\"pt\", padding=\"longest\").input_ids"
+      ],
+      "execution_count": 11,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "fldUU7QQmF_5"
+      },
+      "source": [
+        "with torch.no_grad():\n",
+        "    last_hidden_states = model(input_ids)"
+      ],
+      "execution_count": 12,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "czVskyg4mNA5",
+        "outputId": "0f9f3ca2-4dca-4e32-cb2d-04ae84ddbcba"
+      },
+      "source": [
+        "last_hidden_states[0].size()"
+      ],
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "torch.Size([81, 63, 768])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 13
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "6o1zf03TmTZz"
+      },
+      "source": [
+        "m = last_hidden_states[0][:, 0, :]"
+      ],
+      "execution_count": 14,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "FbQm8vGomXup",
+        "outputId": "ec84fac6-cecf-4876-c21e-f863ba00b8d4"
+      },
+      "source": [
+        "last_hidden_states[0].size()"
+      ],
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "torch.Size([81, 63, 768])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 15
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "lksgWtyUnNzh"
+      },
+      "source": [
+        "**Now we run PCA to reduce 768 dimension to just 2**"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "5sQE0y_jnc4M"
+      },
+      "source": [
+        "We need 2 dimensions to plot a graph"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "3ovFKmslnkMZ"
+      },
+      "source": [
+        "from sklearn.decomposition import PCA\n",
+        "from sklearn.preprocessing import StandardScaler\n",
+        "scaling=StandardScaler()"
+      ],
+      "execution_count": 16,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "GPIoss_pnrzU",
+        "outputId": "5e153ad4-493e-475a-eb91-8d2bd244a0db"
+      },
+      "source": [
+        "scaling.fit(m)\n",
+        "mm = scaling.transform(m)\n",
+        "mm"
+      ],
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[ 0.42247868, -0.32727265, -0.14594363, ...,  1.19970487,\n",
+              "         0.90339318,  0.15769011],\n",
+              "       [-0.24746768, -0.03300779, -0.1434793 , ..., -0.19270129,\n",
+              "         0.71459097, -0.10477332],\n",
+              "       [-0.05359675, -0.50572485, -0.78271381, ...,  1.1970772 ,\n",
+              "        -1.58248725, -0.96942948],\n",
+              "       ...,\n",
+              "       [ 0.16486483, -0.90406161,  1.0139844 , ...,  0.46362458,\n",
+              "        -0.65078173, -0.24330635],\n",
+              "       [-0.81541194, -0.52106769, -0.56634858, ..., -0.14712022,\n",
+              "         0.72484635,  0.30858111],\n",
+              "       [-0.03367083,  0.3354526 ,  0.20894468, ..., -0.51681366,\n",
+              "         1.36322833, -0.42312087]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 17
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "rQ9tn0yTn04s"
+      },
+      "source": [
+        "principal=PCA(n_components=2)\n",
+        "principal.fit(mm)\n",
+        "x=principal.transform(mm)"
+      ],
+      "execution_count": 18,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 419
+        },
+        "id": "khmkwmEyn_jp",
+        "outputId": "9490cf18-5786-4a02-8043-643d20f9304c"
+      },
+      "source": [
+        "df = pd.DataFrame(x, columns=['x', 'y'])\n",
+        "df['sentence'] = sentences\n",
+        "df"
+      ],
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>x</th>\n",
+              "      <th>y</th>\n",
+              "      <th>sentence</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>-3.934732</td>\n",
+              "      <td>-7.500237</td>\n",
+              "      <td>We often talk about \"The Perl Community\", but ...</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>-6.198814</td>\n",
+              "      <td>-0.185218</td>\n",
+              "      <td>Instead what we have is a loose, and at times ...</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>3.063171</td>\n",
+              "      <td>-17.623810</td>\n",
+              "      <td>Over the last few weeks I've been thinking and...</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>8.840539</td>\n",
+              "      <td>-13.440082</td>\n",
+              "      <td>This is not me trying to tell you how things a...</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>-3.155584</td>\n",
+              "      <td>0.416067</td>\n",
+              "      <td>A community is two or more people who come tog...</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>...</th>\n",
+              "      <td>...</td>\n",
+              "      <td>...</td>\n",
+              "      <td>...</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>76</th>\n",
+              "      <td>23.293865</td>\n",
+              "      <td>5.277454</td>\n",
+              "      <td>In a grassroots community of volunteers, like ...</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>77</th>\n",
+              "      <td>4.807804</td>\n",
+              "      <td>-13.350682</td>\n",
+              "      <td>We'll then start thinking about the boundaries...</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>78</th>\n",
+              "      <td>-9.726598</td>\n",
+              "      <td>-3.704864</td>\n",
+              "      <td>I hope the process will naturally bubble up, a...</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>79</th>\n",
+              "      <td>9.534457</td>\n",
+              "      <td>-5.476138</td>\n",
+              "      <td>We may also find that in working this stuff ou...</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>80</th>\n",
+              "      <td>-15.108610</td>\n",
+              "      <td>5.583269</td>\n",
+              "      <td>They could still appear on our map, but labell...</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "<p>81 rows × 3 columns</p>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "            x          y                                           sentence\n",
+              "0   -3.934732  -7.500237  We often talk about \"The Perl Community\", but ...\n",
+              "1   -6.198814  -0.185218  Instead what we have is a loose, and at times ...\n",
+              "2    3.063171 -17.623810  Over the last few weeks I've been thinking and...\n",
+              "3    8.840539 -13.440082  This is not me trying to tell you how things a...\n",
+              "4   -3.155584   0.416067  A community is two or more people who come tog...\n",
+              "..        ...        ...                                                ...\n",
+              "76  23.293865   5.277454  In a grassroots community of volunteers, like ...\n",
+              "77   4.807804 -13.350682  We'll then start thinking about the boundaries...\n",
+              "78  -9.726598  -3.704864  I hope the process will naturally bubble up, a...\n",
+              "79   9.534457  -5.476138  We may also find that in working this stuff ou...\n",
+              "80 -15.108610   5.583269  They could still appear on our map, but labell...\n",
+              "\n",
+              "[81 rows x 3 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 19
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 542
+        },
+        "id": "n-iAtyUroIvK",
+        "outputId": "657b8b4f-887f-4968-8ff6-fb59ac3092c3"
+      },
+      "source": [
+        "import plotly.graph_objects as go\n",
+        "import pandas as pd\n",
+        "\n",
+        "#data = go.Scatter3d(x=df['x'], y=df['y'], z=df['z'], mode='markers', text=[s[:50] for s in df['sentence']])\n",
+        "data = go.Scatter(x=df['x'], y=df['y'], mode='markers', text=[s[:50] for s in df['sentence']])\n",
+        "fig = go.Figure(data=data)\n",
+        "\n",
+        "def click_callback(trace, points, selector):\n",
+        "  print(1 + trace * 2)\n",
+        "  print(points)\n",
+        "  print(selector)\n",
+        "\n",
+        "data.on_click(click_callback)\n",
+        "\n",
+        "fig.update_layout(title='Text summary')\n",
+        "fig.show()"
+      ],
+      "execution_count": 20,
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "<html>\n",
+              "<head><meta charset=\"utf-8\" /></head>\n",
+              "<body>\n",
+              "    <div>\n",
+              "            <script src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG\"></script><script type=\"text/javascript\">if (window.MathJax) {MathJax.Hub.Config({SVG: {font: \"STIX-Web\"}});}</script>\n",
+              "                <script type=\"text/javascript\">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>\n",
+              "        <script src=\"https://cdn.plot.ly/plotly-latest.min.js\"></script>    \n",
+              "            <div id=\"df0425de-d67a-475c-95ef-df37d4877850\" class=\"plotly-graph-div\" style=\"height:525px; width:100%;\"></div>\n",
+              "            <script type=\"text/javascript\">\n",
+              "                \n",
+              "                    window.PLOTLYENV=window.PLOTLYENV || {};\n",
+              "                    \n",
+              "                if (document.getElementById(\"df0425de-d67a-475c-95ef-df37d4877850\")) {\n",
+              "                    Plotly.newPlot(\n",
+              "                        'df0425de-d67a-475c-95ef-df37d4877850',\n",
+              "                        [{\"mode\": \"markers\", \"text\": [\"We often talk about \\\"The Perl Community\\\", but I do\", \"Instead what we have is a loose, and at times frau\", \"Over the last few weeks I've been thinking and tal\", \"This is not me trying to tell you how things are, \", \"A community is two or more people who come togethe\", \"This may be a belief, a common purpose or goal, an\", \"A group of people with something in common, that t\", \"This can happen organically.\", \"Let's say you get into knitting, and you bump into\", \"You start hanging out at the pub, knitting togethe\", \"Other people notice and ask if they can join in.\", \"This is great: you feel part of something, and it'\", \"Slowly you accrete more members, and it becomes a \", \"You're emotionally invested.\", \"Then someone joins your circle, but they're a bit \", \"They start telling everybody what they're doing wr\", \"\\\"Hey, we'll all be better knitters if we're honest\", \"Some people look to you to \\\"do something!\", \"\\\", but others like the new member, finding them a \", \"Suddenly your happy place has become a cause of st\", \"There's no malice intended, but unless dealt with,\", \"When we join a community that feels like a good fi\", \"It's also tempting to think that because you're \\\"w\", \"But for a community of any size, that just won't b\", \"Similarly we're not going to agree with everyone e\", \"We need to run our communities in a way that lets \", \"Most of the time that won't mean unanimity, but th\", \"While doing that, we have to be mindful of Popper'\", \"One Perl community is \\\"The Toolchain\\\".\", \"These are the people who work on PAUSE, MetaCPAN, \", \"Over the years there have been a number of areas o\", \"Working through two of these ultimately resulted i\", \"Having shared mental models has made it easier \\u2014 a\", \"Conflict can sometimes be an indicator that you're\", \"We need a shared model for our communities: what a\", \"I suspect that individual communities will find th\", \"We've all heard about situations where our communi\", \"In many of those cases, I don't believe there was \", \"And while we've gradually been introducing codes o\", \"In addition to shared models, our communities need\", \"That may be as simple as \\\"if you're a jerk, we'll \", \"There are situations where a permaban is an approp\", \"Sometimes people just aren't for your community, b\", \"Communities of any size are going to be heterogene\", \"People need to find their place, and healthy commu\", \"Being more explicit about the nature of each of ou\", \"We need the people who quietly beaver away, buildi\", \"We need the people who write documentation, publis\", \"We need the people who organise events and meetups\", \"We also need organisations like TPF, Les Mongeurs \", \"When these people and communities come together (a\", \"This is one of the reasons why these places benefi\", \"Many conference organisers don't think of it as \\\"t\", \"In that context, organisers can feel uneasy about \", \"Saying \\\"this conference has no code of conduct\\\" is\", \"Our IRC channels and perl.org mailing lists are si\", \"Lists and channels are individual communities, and\", \"the irc.perl.org house rules).\", \"One example list, perl5-porters or \\\"p5p\\\", has a cl\", \"The council's job is to build a shared vision, not\", \"We've seen this over the last year when trying to \", \"A perennial tension in p5p, and elsewhere, is to f\", \"Imposing a vision top-down didn't work; once we st\", \"Sure, some people knew that right answer \\\"all alon\", \"Conclusion\\n\\nI don't think we should talk about \\\"Th\", \"They're complex, messy, and diverse (in many ways,\", \"We've built up significant community debt over the\", \"We have a lot of pieces in place, but I think we n\", \"I think we need to build that together.\", \"One thing that would help us is a map, so that we \", \"What house rules do we have already, and who gets \", \"Creating this sort of map will probably produce a \", \"I suspect the best way to come up with the map is \", \"At the same time, we can talk about communities an\", \"There are many wheels here that we do not need to \", \"Hopefully these things will prompt individual comm\", \"In a grassroots community of volunteers, like ours\", \"We'll then start thinking about the boundaries bet\", \"I hope the process will naturally bubble up, as we\", \"We may also find that in working this stuff out, w\", \"They could still appear on our map, but labelled \\\"\"], \"type\": \"scatter\", \"x\": [-3.934731740511756, -6.19881352712749, 3.063170959130038, 8.840539486007243, -3.1555844038360417, -1.3107205695885067, 0.9037401778083998, -29.08245725011262, 1.8780166090750445, -18.757781515565224, -20.936675381367436, -4.2452508217951, -9.784214174311309, -31.789041289468017, -18.46856822543389, -0.8734512893733439, 1.5891586791687047, -20.325301503693588, -7.57944952028446, -16.734060076435107, -2.097748929481524, 7.169804350360734, 4.117781052090411, -0.2655662577320136, -15.680700900238733, -2.7632405196428116, 14.538219604752907, 15.556464785493752, -11.325045364217054, 6.18859622871608, -6.917299751195202, -8.888995450926156, -8.040625459465254, -11.075156985584652, 13.070280068876656, 1.9281604755161035, -11.964455251217156, 15.895644511968943, 10.555343086064173, 12.44377100917337, 32.1420473577729, 28.484659581872705, 10.33359817048594, 0.630329383442798, -5.034815320169297, 1.8145764200128771, 21.715547103832904, -2.084569775429627, 14.313980966727264, 28.86498310022312, 24.02948211215407, -8.05075345566112, 6.392934160751261, 7.247327375667304, 8.84408484612861, -9.569163723657573, 10.116642226713942, -11.34310483412498, 10.790618944546546, -4.693115114918957, -8.753887136195797, 23.548266442678504, 5.570649672244192, 2.1574176193033687, 0.44507813410274877, -12.667085763497752, -10.279624885052758, 24.757947142663223, -24.473851562869477, 5.469721965852585, -16.589959926333517, -11.516673478740307, 6.517429080295436, 10.171844332646353, -16.64671135523933, -1.000523566043797, 23.293865132758093, 4.807804055623009, -9.726597685963405, 9.534457331437288, -15.10861000163747], \"y\": [-7.500237405199023, -0.18521774278185002, -17.62381021410902, -13.440081744650767, 0.4160665793309014, 0.6241194029483077, -1.994529533338942, 18.889677190676693, -16.211916607572174, 4.054137305144753, 5.966860025678418, -10.044167167963968, -4.570677591343671, 13.976470726453865, -0.06183884807596877, -5.467408034961926, -8.908823126900852, 5.704220268961377, 2.3985184971138827, 4.116404643829975, -4.988759973341384, -14.080252527807385, -10.39103222817411, -6.444239260308518, 0.7884990917795964, -1.7897363544001137, -5.302579693997807, 0.01988146515535083, 9.008288002638523, 1.1644599390257993, -2.455319949281473, 2.2438904500727945, -5.4134533646525185, 3.541578454277265, -5.350188078780313, -2.400026299007659, 2.961038525163796, -0.2509256946289549, -0.5747911952468198, 10.10740209417743, 34.53048213115737, 19.993963646378898, -4.503443495592741, -1.4965567259083932, -1.7409470445607895, -5.741293911416948, 1.5777382232025874, 3.0431759537432383, 0.04184694551556495, 32.68619326672096, 4.502461823923604, 6.898712980000306, -2.0060149967334624, -2.5294808275368768, -6.005249034766342, 1.8839168360011935, 2.987122852618155, 12.250201617491026, 8.31444094565422, 4.93826953642831, -5.003363277873157, 9.897660695194157, -13.078951313685712, -11.445770059746096, -10.652673248691913, 2.7045371397619373, 2.4603150359414627, -6.055492162234792, 10.48545132647325, -8.728887181565131, 7.194825666998217, -7.772361455150124, -15.2834152578627, -8.364996354803088, 6.4646354054799815, 8.692405185410252, 5.277454454077985, -13.3506818681492, -3.7048640095153624, -5.4761381454006415, 5.583268677117294]}],\n",
+              "                        {\"template\": {\"data\": {\"bar\": [{\"error_x\": {\"color\": \"#2a3f5f\"}, \"error_y\": {\"color\": \"#2a3f5f\"}, \"marker\": {\"line\": {\"color\": \"#E5ECF6\", \"width\": 0.5}}, \"type\": \"bar\"}], \"barpolar\": [{\"marker\": {\"line\": {\"color\": \"#E5ECF6\", \"width\": 0.5}}, \"type\": \"barpolar\"}], \"carpet\": [{\"aaxis\": {\"endlinecolor\": \"#2a3f5f\", \"gridcolor\": \"white\", \"linecolor\": \"white\", \"minorgridcolor\": \"white\", \"startlinecolor\": \"#2a3f5f\"}, \"baxis\": {\"endlinecolor\": \"#2a3f5f\", \"gridcolor\": \"white\", \"linecolor\": \"white\", \"minorgridcolor\": \"white\", \"startlinecolor\": \"#2a3f5f\"}, \"type\": \"carpet\"}], \"choropleth\": [{\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}, \"type\": \"choropleth\"}], \"contour\": [{\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}, \"colorscale\": [[0.0, \"#0d0887\"], [0.1111111111111111, \"#46039f\"], [0.2222222222222222, \"#7201a8\"], [0.3333333333333333, \"#9c179e\"], [0.4444444444444444, \"#bd3786\"], [0.5555555555555556, \"#d8576b\"], [0.6666666666666666, \"#ed7953\"], [0.7777777777777778, \"#fb9f3a\"], [0.8888888888888888, \"#fdca26\"], [1.0, \"#f0f921\"]], \"type\": \"contour\"}], \"contourcarpet\": [{\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}, \"type\": \"contourcarpet\"}], \"heatmap\": [{\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}, \"colorscale\": [[0.0, \"#0d0887\"], [0.1111111111111111, \"#46039f\"], [0.2222222222222222, \"#7201a8\"], [0.3333333333333333, \"#9c179e\"], [0.4444444444444444, \"#bd3786\"], [0.5555555555555556, \"#d8576b\"], [0.6666666666666666, \"#ed7953\"], [0.7777777777777778, \"#fb9f3a\"], [0.8888888888888888, \"#fdca26\"], [1.0, \"#f0f921\"]], \"type\": \"heatmap\"}], \"heatmapgl\": [{\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}, \"colorscale\": [[0.0, \"#0d0887\"], [0.1111111111111111, \"#46039f\"], [0.2222222222222222, \"#7201a8\"], [0.3333333333333333, \"#9c179e\"], [0.4444444444444444, \"#bd3786\"], [0.5555555555555556, \"#d8576b\"], [0.6666666666666666, \"#ed7953\"], [0.7777777777777778, \"#fb9f3a\"], [0.8888888888888888, \"#fdca26\"], [1.0, \"#f0f921\"]], \"type\": \"heatmapgl\"}], \"histogram\": [{\"marker\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"histogram\"}], \"histogram2d\": [{\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}, \"colorscale\": [[0.0, \"#0d0887\"], [0.1111111111111111, \"#46039f\"], [0.2222222222222222, \"#7201a8\"], [0.3333333333333333, \"#9c179e\"], [0.4444444444444444, \"#bd3786\"], [0.5555555555555556, \"#d8576b\"], [0.6666666666666666, \"#ed7953\"], [0.7777777777777778, \"#fb9f3a\"], [0.8888888888888888, \"#fdca26\"], [1.0, \"#f0f921\"]], \"type\": \"histogram2d\"}], \"histogram2dcontour\": [{\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}, \"colorscale\": [[0.0, \"#0d0887\"], [0.1111111111111111, \"#46039f\"], [0.2222222222222222, \"#7201a8\"], [0.3333333333333333, \"#9c179e\"], [0.4444444444444444, \"#bd3786\"], [0.5555555555555556, \"#d8576b\"], [0.6666666666666666, \"#ed7953\"], [0.7777777777777778, \"#fb9f3a\"], [0.8888888888888888, \"#fdca26\"], [1.0, \"#f0f921\"]], \"type\": \"histogram2dcontour\"}], \"mesh3d\": [{\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}, \"type\": \"mesh3d\"}], \"parcoords\": [{\"line\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"parcoords\"}], \"pie\": [{\"automargin\": true, \"type\": \"pie\"}], \"scatter\": [{\"marker\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"scatter\"}], \"scatter3d\": [{\"line\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"marker\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"scatter3d\"}], \"scattercarpet\": [{\"marker\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"scattercarpet\"}], \"scattergeo\": [{\"marker\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"scattergeo\"}], \"scattergl\": [{\"marker\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"scattergl\"}], \"scattermapbox\": [{\"marker\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"scattermapbox\"}], \"scatterpolar\": [{\"marker\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"scatterpolar\"}], \"scatterpolargl\": [{\"marker\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"scatterpolargl\"}], \"scatterternary\": [{\"marker\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"scatterternary\"}], \"surface\": [{\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}, \"colorscale\": [[0.0, \"#0d0887\"], [0.1111111111111111, \"#46039f\"], [0.2222222222222222, \"#7201a8\"], [0.3333333333333333, \"#9c179e\"], [0.4444444444444444, \"#bd3786\"], [0.5555555555555556, \"#d8576b\"], [0.6666666666666666, \"#ed7953\"], [0.7777777777777778, \"#fb9f3a\"], [0.8888888888888888, \"#fdca26\"], [1.0, \"#f0f921\"]], \"type\": \"surface\"}], \"table\": [{\"cells\": {\"fill\": {\"color\": \"#EBF0F8\"}, \"line\": {\"color\": \"white\"}}, \"header\": {\"fill\": {\"color\": \"#C8D4E3\"}, \"line\": {\"color\": \"white\"}}, \"type\": \"table\"}]}, \"layout\": {\"annotationdefaults\": {\"arrowcolor\": \"#2a3f5f\", \"arrowhead\": 0, \"arrowwidth\": 1}, \"coloraxis\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"colorscale\": {\"diverging\": [[0, \"#8e0152\"], [0.1, \"#c51b7d\"], [0.2, \"#de77ae\"], [0.3, \"#f1b6da\"], [0.4, \"#fde0ef\"], [0.5, \"#f7f7f7\"], [0.6, \"#e6f5d0\"], [0.7, \"#b8e186\"], [0.8, \"#7fbc41\"], [0.9, \"#4d9221\"], [1, \"#276419\"]], \"sequential\": [[0.0, \"#0d0887\"], [0.1111111111111111, \"#46039f\"], [0.2222222222222222, \"#7201a8\"], [0.3333333333333333, \"#9c179e\"], [0.4444444444444444, \"#bd3786\"], [0.5555555555555556, \"#d8576b\"], [0.6666666666666666, \"#ed7953\"], [0.7777777777777778, \"#fb9f3a\"], [0.8888888888888888, \"#fdca26\"], [1.0, \"#f0f921\"]], \"sequentialminus\": [[0.0, \"#0d0887\"], [0.1111111111111111, \"#46039f\"], [0.2222222222222222, \"#7201a8\"], [0.3333333333333333, \"#9c179e\"], [0.4444444444444444, \"#bd3786\"], [0.5555555555555556, \"#d8576b\"], [0.6666666666666666, \"#ed7953\"], [0.7777777777777778, \"#fb9f3a\"], [0.8888888888888888, \"#fdca26\"], [1.0, \"#f0f921\"]]}, \"colorway\": [\"#636efa\", \"#EF553B\", \"#00cc96\", \"#ab63fa\", \"#FFA15A\", \"#19d3f3\", \"#FF6692\", \"#B6E880\", \"#FF97FF\", \"#FECB52\"], \"font\": {\"color\": \"#2a3f5f\"}, \"geo\": {\"bgcolor\": \"white\", \"lakecolor\": \"white\", \"landcolor\": \"#E5ECF6\", \"showlakes\": true, \"showland\": true, \"subunitcolor\": \"white\"}, \"hoverlabel\": {\"align\": \"left\"}, \"hovermode\": \"closest\", \"mapbox\": {\"style\": \"light\"}, \"paper_bgcolor\": \"white\", \"plot_bgcolor\": \"#E5ECF6\", \"polar\": {\"angularaxis\": {\"gridcolor\": \"white\", \"linecolor\": \"white\", \"ticks\": \"\"}, \"bgcolor\": \"#E5ECF6\", \"radialaxis\": {\"gridcolor\": \"white\", \"linecolor\": \"white\", \"ticks\": \"\"}}, \"scene\": {\"xaxis\": {\"backgroundcolor\": \"#E5ECF6\", \"gridcolor\": \"white\", \"gridwidth\": 2, \"linecolor\": \"white\", \"showbackground\": true, \"ticks\": \"\", \"zerolinecolor\": \"white\"}, \"yaxis\": {\"backgroundcolor\": \"#E5ECF6\", \"gridcolor\": \"white\", \"gridwidth\": 2, \"linecolor\": \"white\", \"showbackground\": true, \"ticks\": \"\", \"zerolinecolor\": \"white\"}, \"zaxis\": {\"backgroundcolor\": \"#E5ECF6\", \"gridcolor\": \"white\", \"gridwidth\": 2, \"linecolor\": \"white\", \"showbackground\": true, \"ticks\": \"\", \"zerolinecolor\": \"white\"}}, \"shapedefaults\": {\"line\": {\"color\": \"#2a3f5f\"}}, \"ternary\": {\"aaxis\": {\"gridcolor\": \"white\", \"linecolor\": \"white\", \"ticks\": \"\"}, \"baxis\": {\"gridcolor\": \"white\", \"linecolor\": \"white\", \"ticks\": \"\"}, \"bgcolor\": \"#E5ECF6\", \"caxis\": {\"gridcolor\": \"white\", \"linecolor\": \"white\", \"ticks\": \"\"}}, \"title\": {\"x\": 0.05}, \"xaxis\": {\"automargin\": true, \"gridcolor\": \"white\", \"linecolor\": \"white\", \"ticks\": \"\", \"title\": {\"standoff\": 15}, \"zerolinecolor\": \"white\", \"zerolinewidth\": 2}, \"yaxis\": {\"automargin\": true, \"gridcolor\": \"white\", \"linecolor\": \"white\", \"ticks\": \"\", \"title\": {\"standoff\": 15}, \"zerolinecolor\": \"white\", \"zerolinewidth\": 2}}}, \"title\": {\"text\": \"Text summary\"}},\n",
+              "                        {\"responsive\": true}\n",
+              "                    ).then(function(){\n",
+              "                            \n",
+              "var gd = document.getElementById('df0425de-d67a-475c-95ef-df37d4877850');\n",
+              "var x = new MutationObserver(function (mutations, observer) {{\n",
+              "        var display = window.getComputedStyle(gd).display;\n",
+              "        if (!display || display === 'none') {{\n",
+              "            console.log([gd, 'removed!']);\n",
+              "            Plotly.purge(gd);\n",
+              "            observer.disconnect();\n",
+              "        }}\n",
+              "}});\n",
+              "\n",
+              "// Listen for the removal of the full notebook cells\n",
+              "var notebookContainer = gd.closest('#notebook-container');\n",
+              "if (notebookContainer) {{\n",
+              "    x.observe(notebookContainer, {childList: true});\n",
+              "}}\n",
+              "\n",
+              "// Listen for the clearing of the current output cell\n",
+              "var outputEl = gd.closest('.output');\n",
+              "if (outputEl) {{\n",
+              "    x.observe(outputEl, {childList: true});\n",
+              "}}\n",
+              "\n",
+              "                        })\n",
+              "                };\n",
+              "                \n",
+              "            </script>\n",
+              "        </div>\n",
+              "</body>\n",
+              "</html>"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 542
+        },
+        "id": "S4X54sL0obt6",
+        "outputId": "6628ad85-31d0-4c7a-aaff-8b8bfc342088"
+      },
+      "source": [
+        "fig = go.Figure(data = go.Scatter(x=[-1.4, -3.1, 0, -2.1], y=[2.6, 1.9, 2.4, 0], mode='markers', marker={'size':20}))\n",
+        "fig.show()"
+      ],
+      "execution_count": 21,
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "<html>\n",
+              "<head><meta charset=\"utf-8\" /></head>\n",
+              "<body>\n",
+              "    <div>\n",
+              "            <script src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG\"></script><script type=\"text/javascript\">if (window.MathJax) {MathJax.Hub.Config({SVG: {font: \"STIX-Web\"}});}</script>\n",
+              "                <script type=\"text/javascript\">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>\n",
+              "        <script src=\"https://cdn.plot.ly/plotly-latest.min.js\"></script>    \n",
+              "            <div id=\"4a9ff774-4e52-46e4-ad7c-ff9e55d93600\" class=\"plotly-graph-div\" style=\"height:525px; width:100%;\"></div>\n",
+              "            <script type=\"text/javascript\">\n",
+              "                \n",
+              "                    window.PLOTLYENV=window.PLOTLYENV || {};\n",
+              "                    \n",
+              "                if (document.getElementById(\"4a9ff774-4e52-46e4-ad7c-ff9e55d93600\")) {\n",
+              "                    Plotly.newPlot(\n",
+              "                        '4a9ff774-4e52-46e4-ad7c-ff9e55d93600',\n",
+              "                        [{\"marker\": {\"size\": 20}, \"mode\": \"markers\", \"type\": \"scatter\", \"x\": [-1.4, -3.1, 0, -2.1], \"y\": [2.6, 1.9, 2.4, 0]}],\n",
+              "                        {\"template\": {\"data\": {\"bar\": [{\"error_x\": {\"color\": \"#2a3f5f\"}, \"error_y\": {\"color\": \"#2a3f5f\"}, \"marker\": {\"line\": {\"color\": \"#E5ECF6\", \"width\": 0.5}}, \"type\": \"bar\"}], \"barpolar\": [{\"marker\": {\"line\": {\"color\": \"#E5ECF6\", \"width\": 0.5}}, \"type\": \"barpolar\"}], \"carpet\": [{\"aaxis\": {\"endlinecolor\": \"#2a3f5f\", \"gridcolor\": \"white\", \"linecolor\": \"white\", \"minorgridcolor\": \"white\", \"startlinecolor\": \"#2a3f5f\"}, \"baxis\": {\"endlinecolor\": \"#2a3f5f\", \"gridcolor\": \"white\", \"linecolor\": \"white\", \"minorgridcolor\": \"white\", \"startlinecolor\": \"#2a3f5f\"}, \"type\": \"carpet\"}], \"choropleth\": [{\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}, \"type\": \"choropleth\"}], \"contour\": [{\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}, \"colorscale\": [[0.0, \"#0d0887\"], [0.1111111111111111, \"#46039f\"], [0.2222222222222222, \"#7201a8\"], [0.3333333333333333, \"#9c179e\"], [0.4444444444444444, \"#bd3786\"], [0.5555555555555556, \"#d8576b\"], [0.6666666666666666, \"#ed7953\"], [0.7777777777777778, \"#fb9f3a\"], [0.8888888888888888, \"#fdca26\"], [1.0, \"#f0f921\"]], \"type\": \"contour\"}], \"contourcarpet\": [{\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}, \"type\": \"contourcarpet\"}], \"heatmap\": [{\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}, \"colorscale\": [[0.0, \"#0d0887\"], [0.1111111111111111, \"#46039f\"], [0.2222222222222222, \"#7201a8\"], [0.3333333333333333, \"#9c179e\"], [0.4444444444444444, \"#bd3786\"], [0.5555555555555556, \"#d8576b\"], [0.6666666666666666, \"#ed7953\"], [0.7777777777777778, \"#fb9f3a\"], [0.8888888888888888, \"#fdca26\"], [1.0, \"#f0f921\"]], \"type\": \"heatmap\"}], \"heatmapgl\": [{\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}, \"colorscale\": [[0.0, \"#0d0887\"], [0.1111111111111111, \"#46039f\"], [0.2222222222222222, \"#7201a8\"], [0.3333333333333333, \"#9c179e\"], [0.4444444444444444, \"#bd3786\"], [0.5555555555555556, \"#d8576b\"], [0.6666666666666666, \"#ed7953\"], [0.7777777777777778, \"#fb9f3a\"], [0.8888888888888888, \"#fdca26\"], [1.0, \"#f0f921\"]], \"type\": \"heatmapgl\"}], \"histogram\": [{\"marker\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"histogram\"}], \"histogram2d\": [{\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}, \"colorscale\": [[0.0, \"#0d0887\"], [0.1111111111111111, \"#46039f\"], [0.2222222222222222, \"#7201a8\"], [0.3333333333333333, \"#9c179e\"], [0.4444444444444444, \"#bd3786\"], [0.5555555555555556, \"#d8576b\"], [0.6666666666666666, \"#ed7953\"], [0.7777777777777778, \"#fb9f3a\"], [0.8888888888888888, \"#fdca26\"], [1.0, \"#f0f921\"]], \"type\": \"histogram2d\"}], \"histogram2dcontour\": [{\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}, \"colorscale\": [[0.0, \"#0d0887\"], [0.1111111111111111, \"#46039f\"], [0.2222222222222222, \"#7201a8\"], [0.3333333333333333, \"#9c179e\"], [0.4444444444444444, \"#bd3786\"], [0.5555555555555556, \"#d8576b\"], [0.6666666666666666, \"#ed7953\"], [0.7777777777777778, \"#fb9f3a\"], [0.8888888888888888, \"#fdca26\"], [1.0, \"#f0f921\"]], \"type\": \"histogram2dcontour\"}], \"mesh3d\": [{\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}, \"type\": \"mesh3d\"}], \"parcoords\": [{\"line\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"parcoords\"}], \"pie\": [{\"automargin\": true, \"type\": \"pie\"}], \"scatter\": [{\"marker\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"scatter\"}], \"scatter3d\": [{\"line\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"marker\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"scatter3d\"}], \"scattercarpet\": [{\"marker\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"scattercarpet\"}], \"scattergeo\": [{\"marker\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"scattergeo\"}], \"scattergl\": [{\"marker\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"scattergl\"}], \"scattermapbox\": [{\"marker\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"scattermapbox\"}], \"scatterpolar\": [{\"marker\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"scatterpolar\"}], \"scatterpolargl\": [{\"marker\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"scatterpolargl\"}], \"scatterternary\": [{\"marker\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"type\": \"scatterternary\"}], \"surface\": [{\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}, \"colorscale\": [[0.0, \"#0d0887\"], [0.1111111111111111, \"#46039f\"], [0.2222222222222222, \"#7201a8\"], [0.3333333333333333, \"#9c179e\"], [0.4444444444444444, \"#bd3786\"], [0.5555555555555556, \"#d8576b\"], [0.6666666666666666, \"#ed7953\"], [0.7777777777777778, \"#fb9f3a\"], [0.8888888888888888, \"#fdca26\"], [1.0, \"#f0f921\"]], \"type\": \"surface\"}], \"table\": [{\"cells\": {\"fill\": {\"color\": \"#EBF0F8\"}, \"line\": {\"color\": \"white\"}}, \"header\": {\"fill\": {\"color\": \"#C8D4E3\"}, \"line\": {\"color\": \"white\"}}, \"type\": \"table\"}]}, \"layout\": {\"annotationdefaults\": {\"arrowcolor\": \"#2a3f5f\", \"arrowhead\": 0, \"arrowwidth\": 1}, \"coloraxis\": {\"colorbar\": {\"outlinewidth\": 0, \"ticks\": \"\"}}, \"colorscale\": {\"diverging\": [[0, \"#8e0152\"], [0.1, \"#c51b7d\"], [0.2, \"#de77ae\"], [0.3, \"#f1b6da\"], [0.4, \"#fde0ef\"], [0.5, \"#f7f7f7\"], [0.6, \"#e6f5d0\"], [0.7, \"#b8e186\"], [0.8, \"#7fbc41\"], [0.9, \"#4d9221\"], [1, \"#276419\"]], \"sequential\": [[0.0, \"#0d0887\"], [0.1111111111111111, \"#46039f\"], [0.2222222222222222, \"#7201a8\"], [0.3333333333333333, \"#9c179e\"], [0.4444444444444444, \"#bd3786\"], [0.5555555555555556, \"#d8576b\"], [0.6666666666666666, \"#ed7953\"], [0.7777777777777778, \"#fb9f3a\"], [0.8888888888888888, \"#fdca26\"], [1.0, \"#f0f921\"]], \"sequentialminus\": [[0.0, \"#0d0887\"], [0.1111111111111111, \"#46039f\"], [0.2222222222222222, \"#7201a8\"], [0.3333333333333333, \"#9c179e\"], [0.4444444444444444, \"#bd3786\"], [0.5555555555555556, \"#d8576b\"], [0.6666666666666666, \"#ed7953\"], [0.7777777777777778, \"#fb9f3a\"], [0.8888888888888888, \"#fdca26\"], [1.0, \"#f0f921\"]]}, \"colorway\": [\"#636efa\", \"#EF553B\", \"#00cc96\", \"#ab63fa\", \"#FFA15A\", \"#19d3f3\", \"#FF6692\", \"#B6E880\", \"#FF97FF\", \"#FECB52\"], \"font\": {\"color\": \"#2a3f5f\"}, \"geo\": {\"bgcolor\": \"white\", \"lakecolor\": \"white\", \"landcolor\": \"#E5ECF6\", \"showlakes\": true, \"showland\": true, \"subunitcolor\": \"white\"}, \"hoverlabel\": {\"align\": \"left\"}, \"hovermode\": \"closest\", \"mapbox\": {\"style\": \"light\"}, \"paper_bgcolor\": \"white\", \"plot_bgcolor\": \"#E5ECF6\", \"polar\": {\"angularaxis\": {\"gridcolor\": \"white\", \"linecolor\": \"white\", \"ticks\": \"\"}, \"bgcolor\": \"#E5ECF6\", \"radialaxis\": {\"gridcolor\": \"white\", \"linecolor\": \"white\", \"ticks\": \"\"}}, \"scene\": {\"xaxis\": {\"backgroundcolor\": \"#E5ECF6\", \"gridcolor\": \"white\", \"gridwidth\": 2, \"linecolor\": \"white\", \"showbackground\": true, \"ticks\": \"\", \"zerolinecolor\": \"white\"}, \"yaxis\": {\"backgroundcolor\": \"#E5ECF6\", \"gridcolor\": \"white\", \"gridwidth\": 2, \"linecolor\": \"white\", \"showbackground\": true, \"ticks\": \"\", \"zerolinecolor\": \"white\"}, \"zaxis\": {\"backgroundcolor\": \"#E5ECF6\", \"gridcolor\": \"white\", \"gridwidth\": 2, \"linecolor\": \"white\", \"showbackground\": true, \"ticks\": \"\", \"zerolinecolor\": \"white\"}}, \"shapedefaults\": {\"line\": {\"color\": \"#2a3f5f\"}}, \"ternary\": {\"aaxis\": {\"gridcolor\": \"white\", \"linecolor\": \"white\", \"ticks\": \"\"}, \"baxis\": {\"gridcolor\": \"white\", \"linecolor\": \"white\", \"ticks\": \"\"}, \"bgcolor\": \"#E5ECF6\", \"caxis\": {\"gridcolor\": \"white\", \"linecolor\": \"white\", \"ticks\": \"\"}}, \"title\": {\"x\": 0.05}, \"xaxis\": {\"automargin\": true, \"gridcolor\": \"white\", \"linecolor\": \"white\", \"ticks\": \"\", \"title\": {\"standoff\": 15}, \"zerolinecolor\": \"white\", \"zerolinewidth\": 2}, \"yaxis\": {\"automargin\": true, \"gridcolor\": \"white\", \"linecolor\": \"white\", \"ticks\": \"\", \"title\": {\"standoff\": 15}, \"zerolinecolor\": \"white\", \"zerolinewidth\": 2}}}},\n",
+              "                        {\"responsive\": true}\n",
+              "                    ).then(function(){\n",
+              "                            \n",
+              "var gd = document.getElementById('4a9ff774-4e52-46e4-ad7c-ff9e55d93600');\n",
+              "var x = new MutationObserver(function (mutations, observer) {{\n",
+              "        var display = window.getComputedStyle(gd).display;\n",
+              "        if (!display || display === 'none') {{\n",
+              "            console.log([gd, 'removed!']);\n",
+              "            Plotly.purge(gd);\n",
+              "            observer.disconnect();\n",
+              "        }}\n",
+              "}});\n",
+              "\n",
+              "// Listen for the removal of the full notebook cells\n",
+              "var notebookContainer = gd.closest('#notebook-container');\n",
+              "if (notebookContainer) {{\n",
+              "    x.observe(notebookContainer, {childList: true});\n",
+              "}}\n",
+              "\n",
+              "// Listen for the clearing of the current output cell\n",
+              "var outputEl = gd.closest('.output');\n",
+              "if (outputEl) {{\n",
+              "    x.observe(outputEl, {childList: true});\n",
+              "}}\n",
+              "\n",
+              "                        })\n",
+              "                };\n",
+              "                \n",
+              "            </script>\n",
+              "        </div>\n",
+              "</body>\n",
+              "</html>"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        }
+      ]
+    }
+  ]
+}
